@@ -19,7 +19,7 @@ ingresoEdad = Label(CrearExpediente,text="Ingrese la edad del paciente",font=(14
 nuevaEdad=Entry(CrearExpediente)
 nuevaEdad.place(x=215,y=224)
 
-registroInformacion=Label(CrearExpediente,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER).place(x=210,y=310)
+registroInformacion=Label(CrearExpediente,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER).place(x=260,y=310)
 
 
 cedula=Label(CrearExpediente)
