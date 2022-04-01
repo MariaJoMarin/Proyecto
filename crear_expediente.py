@@ -49,6 +49,6 @@ botonCrear.place(x=20,y=270)
 Label(CrearExpediente,text="*Por favor darle al boton una vez haya terminado",font=(14)).place(x=130,y=270)
 
 
-CerrarSecion=Button(CrearExpediente,text="Volver al Menu de doctores").place(x=634,y=510)
+volverMenuDocores=Button(CrearExpediente,text="Volver al Menu de doctores").place(x=634,y=510)
 
 CrearExpediente.mainloop()
