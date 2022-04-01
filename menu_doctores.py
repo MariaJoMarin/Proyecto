@@ -6,7 +6,7 @@ MenuDoctor.geometry("800x550")
 MenuDoctor.resizable(0,0)
 
 Label(MenuDoctor,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER).place(x=300,y=55)
-Label(MenuDoctor,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER).place(x=320,y=130)
+Label(MenuDoctor,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER).place(x=320,y=135)
 
 crear=Button(MenuDoctor,text="Crear un expediente").place(x=140,y=275)
 consultar=Button(MenuDoctor,text="Consultar un expediente").place(x=320,y=275)
