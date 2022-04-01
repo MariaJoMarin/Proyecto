@@ -7,7 +7,7 @@ CrearExpedinte.resizable(0,0)
 
 informacion=Label(CrearExpedinte,text="INFORMACION DEL NUEVO PACIENTE",font=("Arial",16,"bold","italic"), justify=CENTER).place(x=210,y=55)
 
-ingresoCedulaNuevo = Label(CrearExpedinte,text="Ingrese el número de cédula del paciente del que seva a crear el expediente",font=(14)).place(x=5,y=120)
+ingresoCedulaNuevo = Label(CrearExpedinte,text="Ingrese el número de cédula del paciente del que se va a crear el expediente",font=(14)).place(x=5,y=120)
 nuevaCedula=Entry(CrearExpedinte)
 nuevaCedula.place(x=550,y=124)
 
