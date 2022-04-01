@@ -2,15 +2,15 @@ from tkinter import *
 
 MenuDoctor=Tk()
 MenuDoctor.title("Menu doctores")
-MenuDoctor.geometry("600x340")
+MenuDoctor.geometry("800x550")
 MenuDoctor.resizable(0,0)
 
-Label(MenuDoctor,text="Bienvenido Doctor",font=("Arial Bold",16), justify=CENTER).place(x=200,y=55)
-Label(MenuDoctor,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER).place(x=220,y=120)
+Label(MenuDoctor,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER).place(x=300,y=55)
+Label(MenuDoctor,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER).place(x=320,y=130)
 
-crear=Button(MenuDoctor,text="Crear un expediente").place(x=50,y=200)
-consultar=Button(MenuDoctor,text="Consultar un expediente").place(x=220,y=200)
-modificar=Button(MenuDoctor,text="Modificar un expediente").place(x=410,y=200)
+crear=Button(MenuDoctor,text="Crear un expediente").place(x=140,y=275)
+consultar=Button(MenuDoctor,text="Consultar un expediente").place(x=320,y=275)
+modificar=Button(MenuDoctor,text="Modificar un expediente").place(x=525,y=275)
 
-CerrarSecion=Button(MenuDoctor,text="Cerrar sesión").place(x=510,y=300)
+CerrarSecion=Button(MenuDoctor,text="Cerrar sesión").place(x=675,y=485)
 MenuDoctor.mainloop()
