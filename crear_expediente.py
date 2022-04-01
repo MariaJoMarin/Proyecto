@@ -44,7 +44,7 @@ def presionar():
     edad.config(text=txt3)
 
 
-botonCrear=Button(CrearExpedinte,text="Haz click aquí",command=presionar) #command=inicioDeSesion)
+botonCrear=Button(CrearExpedinte,text="Haz click aquí",command=presionar) 
 botonCrear.place(x=20,y=270)
 Label(CrearExpedinte,text="*Por favor darle al boton una vez haya terminado",font=(14)).place(x=130,y=270)
 
