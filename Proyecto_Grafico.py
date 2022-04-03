@@ -4,6 +4,7 @@
 #cada menú va a tener que ser una funcion propia, hay algun detalle de logistica que hay que arreglar
 #pero de momento hay que dejar listo lo minimo.
 #Cada menu debe de tener un boton que permita volver al menu anterior
+#Como se ganaron el premio a compañera tonta, arreglen lo de modificar, se supone que funciona pero no abre las ventanas, perdón
 #
 
 from tkinter import * 
@@ -164,50 +165,111 @@ def menuPrincipal():
                         volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
                         volverMenuDoctores.place(x=634,y=510)
 
-                        
-
-
-                def modificarExpediente():
-                        titulo1.place_forget()
-                        titulo2.place_forget()
-                        crear.place_forget()
-                        consultar.place_forget()
-                        modificar.place_forget()
-                        terminarSesion.place_forget()
-
-                        registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"), justify=CENTER)
-                        registro.place(x=280,y=55)
-                        ingresoCedulaModificar = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14))
-                        ingresoCedulaModificar.place(x=5,y=120)
-                        cedulaModificar=Entry(MenuInicio)
-                        cedulaModificar.place(x=400,y=124)
-
-                        avisoModificar=Label(MenuInicio,text="Que desea modificar",font=("Arial",16,"italic"), justify=CENTER)
-                        avisoModificar.place(x=287,y=285)
+                        def modificarExpediente():
+                            titulo1.place_forget()
+                            titulo2.place_forget()
+                            crear.place_forget()
+                            consultar.place_forget()
+                            modificar.place_forget()
+                            terminarSesion.place_forget()
     
-                        agregarPadecimiento=Button(MenuInicio,text="Agregar un padecimiento") 
-                        agregarPadecimiento.place(x=50,y=360)
-
-                        agregarReceta=Button(MenuInicio,text="Agregar una receta") 
-                        agregarReceta.place(x=315,y=360)
+                            registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"), justify=CENTER)
+                            registro.place(x=280,y=55)
+                            ingresoCedulaModificar = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14))
+                            ingresoCedulaModificar.place(x=5,y=120)
+                            cedulaModificar=Entry(MenuInicio)
+                            cedulaModificar.place(x=400,y=124)
     
-                        AlturaPeso=Button(MenuInicio,text="Agregar altura o peso") 
-                        AlturaPeso.place(x=613,y=360)
+                            avisoModificar=Label(MenuInicio,text="Que desea modificar",font=("Arial",16,"italic"), justify=CENTER)
+                            avisoModificar.place(x=300,y=285)
+        
+                            agregarPadecimiento=Button(MenuInicio,text="Agregar un padecimiento") 
+                            agregarPadecimiento.place(x=50,y=360)
 
-                        def volver():
-                            registro.place_forget()
-                            ingresoCedulaModificar.place_forget()
-                            cedulaModificar.place_forget()
-                            avisoModificar.place_forget()
-                            agregarPadecimiento.place_forget()
-                            agregarReceta.place_forget()
-                            AlturaPeso.place_forget()
-                            volverMenuDoctores.place_forget()
-                            inicioDeSesion()
+                            agregarReceta=Button(MenuInicio,text="Agregar una receta") 
+                            agregarReceta.place(x=345,y=360)
+    
+                            AlturaPeso=Button(MenuInicio,text="Agregar altura o peso") 
+                            AlturaPeso.place(x=613,y=360)
+    
 
-                        volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores",command=volver)
-                        volverMenuDoctores.place(x=634,y=510)    
+                            def agregarPadecimiento():
+                                NuevoPadecimiento = Label(MenuInicio, text="Está en el menú de agregar padecimientos", font=("Arial Bold",18))
+                                NuevoPadecimiento.place(x=250, y=55)
+                                padecimientoLabel = Label(MenuInicio, text="Agregue el nuevo padecimiento", font=("Arial Bold",14))
+                                padecimientoLabel.place(x=5, y=150)
+                                PadecimientoAgregado = Entry(MenuInicio)
+                                PadecimientoAgregado.place(x=225,y=155)
 
+                                def volver():
+                                    NuevoPadecimiento.place_forget()
+                                    padecimientoLabel.place_forget()
+                                    PadecimientoAgregado.place_forget()
+                                    volverMenuDoctores.place_forget()
+                                    inicioDeSesion()
+
+                                volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
+                                volverMenuDoctores.place(x=634,y=510)
+
+
+
+                            def agregarReceta():
+                                titulo1.place_forget()
+                                titulo2.place_forget()
+                                crear.place_forget()
+                                consultar.place_forget()
+                                modificar.place_forget()
+                                terminarSesion.place_forget()
+
+                                MenuReceta = Label(MenuInicio, text="Está en el menú de agregar receta", font=("Arial Bold",18))
+                                MenuReceta.place(x=250, y=55)
+                                recetaLabel = Label(MenuInicio, text="Agregue la nueva receta", font=("Arial Bold",14))
+                                recetaLabel.place(x=5, y=150)
+                                NuevaReceta = Entry(MenuInicio)
+                               NuevaReceta.place(x=225,y=155)
+                                
+                                def volver():
+                                    MenuReceta.place_forget()
+                                    recetaLabel.place_forget()
+                                    NuevaReceta.place_forget()
+                                    volverMenuDoctores.place_forget()
+                                    inicioDeSesion()
+                                    
+                               volverMenuDoctores = Button(MenuInicio,text="Volver al Menu de doctores", command = volver)
+                                volverMenuDoctores.place(x=634,y=510)
+
+                            def AlturaPeso():
+                                NuevaAlturaPeso = Label(MenuInicio, text="Está en el menú para cambiar peso o altura", font=("Arial Bold",18))
+                                NuevaAlturaPeso.place(x=250, y=55)
+                                alturaPesoLabel = Label(MenuInicio, text="Agregue el nuevo peso o altura", font=("Arial Bold",14))
+                                alturaPesoLabel.place(x=5, y=150)
+                                AlturaPesoAgregado = Entry(MenuInicio)
+                                AlturaPesoAgregado.place(x=225,y=155)
+    
+                               def volver():
+                                    NuevaAlturPeso.place_forget()
+                                    alturaPesoLabel.place_forget()
+                                    AlturaPesoAgregado.place_forget()
+                                    volverMenuDoctores.place_forget()
+                                    inicioDeSesion()
+    
+                                volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
+                                volverMenuDoctores.place(x=634,y=510)
+            
+                            def volver():
+                                registro.place_forget()
+                                ingresoCedulaModificar.place_forget()
+                                cedulaModificar.place_forget()
+                                avisoModificar.place_forget()
+                                agregarPadecimiento.place_forget()
+                                agregarReceta.place_forget()
+                                AlturaPeso.place_forget()
+                                volverMenuDoctores.place_forget()
+                                inicioDeSesion()
+
+                            volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
+                            volverMenuDoctores.place(x=634,y=510)  
+        
                 def cerrarSesion():
                     titulo1.place_forget()
                     titulo2.place_forget()
