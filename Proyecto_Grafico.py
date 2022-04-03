@@ -1,12 +1,3 @@
-#Las funciones están creadas de forma general, hace falta mucho trabajo
-#presiento que vamos a tener que anidar funciones dentro de otras para mantener todo
-#ordenado en variables locales y para pasar entre pantallas de forma más fácil
-#cada menú va a tener que ser una funcion propia, hay algun detalle de logistica que hay que arreglar
-#pero de momento hay que dejar listo lo minimo.
-#Cada menu debe de tener un boton que permita volver al menu anterior
-#Como se ganaron el premio a compañera tonta, arreglen lo de modificar, se supone que funciona pero no abre las ventanas, perdón
-#
-
 from tkinter import * 
 import random
 
@@ -61,7 +52,6 @@ def menuPrincipal():
                 boton.place_forget() #.forget() elimina el widget para poder escribir más, hay que ir uno a uno
                 bienvenida.place_forget()
                 aviso.place_forget()
-                aviso2.place_forget()
                 ingresoCedula.place_forget()
                 cedula.place_forget()
                 ingresoContrasenia.place_forget()
@@ -99,13 +89,22 @@ def menuPrincipal():
                         ingresoEdad.place(x=5,y=220)
                         nuevaEdad=Entry(MenuInicio)
                         nuevaEdad.place(x=215,y=224)
+                        
+                        def registrar():
+                            global registroInformacion
+                            registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER)
+                            registroInformacion.place(x=260,y=310)
+                            cedula = int(nuevaCedula.get())
+                            nombreCompleto = str(nuevoNombre.get())
+                            nombreCompleto = nombreCompleto.title()
+                            nombreCompleto = nombreCompleto.rstrip()
+                            nombreCompleto = nombreCompleto.lstrip()
+                            edad = int(nuevaEdad.get())
+                            expedientesPacientes.append([cedula, nombreCompleto, edad])
 
-                        registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER)
-                        registroInformacion.place(x=260,y=310)
-                        botonCrear=Button(MenuInicio,text="Haz click aquí") 
+
+                        botonCrear=Button(MenuInicio,text="Crear expediente",command=registrar) 
                         botonCrear.place(x=20,y=270)
-                        aviso = Label(MenuInicio,text="*Por favor darle al boton una vez haya terminado",font=(14))
-                        aviso.place(x=130,y=270)
 
                         def volver():
                             informacion.place_forget()
@@ -117,7 +116,6 @@ def menuPrincipal():
                             nuevaEdad.place_forget()
                             registroInformacion.place_forget()
                             botonCrear.place_forget()
-                            aviso.place_forget()
                             volverMenuDoctores.place_forget()
                             inicioDeSesion()
 
@@ -147,12 +145,25 @@ def menuPrincipal():
                         expediente=Label(MenuInicio,text="Expediente del paciente",font=("Arial",16,"bold","italic"), justify=CENTER)
                         expediente.place(x=260,y=285)
 
-                        botonConsulta=Button(MenuInicio,text="Haz click aquí") 
+                        def busqueda():
+                            global salidaExpediente
+                            cedula = int(cedulaConsulta.get())
+                            for i in range(len(expedientesPacientes)):
+                                for k in range(len(expedientesPacientes[i])):
+                                    if expedientesPacientes[i][k] == cedula:
+                                        expedienteCorrecto = str(expedientesPacientes[i])
+                                        salidaExpediente = Label(MenuInicio,text=expedienteCorrecto, font=(14))
+                                        salidaExpediente.place(x=260, y=385)
+                        
+                        botonConsulta=Button(MenuInicio,text="Haz click aquí", command = busqueda) 
                         botonConsulta.place(x=20,y=190)
                         aviso=Label(MenuInicio,text="*Por favor darle al boton una vez haya terminado",font=(14))
                         aviso.place(x=130,y=190)
                         
+                        
+                        
                         def volver():
+                            salidaExpediente.place_forget()
                             registro.place_forget()
                             ingresoCedulaConsulta.place_forget()
                             cedulaConsulta.place_forget()
@@ -165,111 +176,50 @@ def menuPrincipal():
                         volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
                         volverMenuDoctores.place(x=634,y=510)
 
-                        def modificarExpediente():
-                            titulo1.place_forget()
-                            titulo2.place_forget()
-                            crear.place_forget()
-                            consultar.place_forget()
-                            modificar.place_forget()
-                            terminarSesion.place_forget()
+                        
+
+
+                def modificarExpediente():
+                        titulo1.place_forget()
+                        titulo2.place_forget()
+                        crear.place_forget()
+                        consultar.place_forget()
+                        modificar.place_forget()
+                        terminarSesion.place_forget()
+
+                        registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"), justify=CENTER)
+                        registro.place(x=280,y=55)
+                        ingresoCedulaModificar = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14))
+                        ingresoCedulaModificar.place(x=5,y=120)
+                        cedulaModificar=Entry(MenuInicio)
+                        cedulaModificar.place(x=400,y=124)
+
+                        avisoModificar=Label(MenuInicio,text="Que desea modificar",font=("Arial",16,"italic"), justify=CENTER)
+                        avisoModificar.place(x=287,y=285)
     
-                            registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"), justify=CENTER)
-                            registro.place(x=280,y=55)
-                            ingresoCedulaModificar = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14))
-                            ingresoCedulaModificar.place(x=5,y=120)
-                            cedulaModificar=Entry(MenuInicio)
-                            cedulaModificar.place(x=400,y=124)
+                        agregarPadecimiento=Button(MenuInicio,text="Agregar un padecimiento") 
+                        agregarPadecimiento.place(x=50,y=360)
+
+                        agregarReceta=Button(MenuInicio,text="Agregar una receta") 
+                        agregarReceta.place(x=315,y=360)
     
-                            avisoModificar=Label(MenuInicio,text="Que desea modificar",font=("Arial",16,"italic"), justify=CENTER)
-                            avisoModificar.place(x=300,y=285)
-        
-                            agregarPadecimiento=Button(MenuInicio,text="Agregar un padecimiento") 
-                            agregarPadecimiento.place(x=50,y=360)
+                        AlturaPeso=Button(MenuInicio,text="Agregar altura o peso") 
+                        AlturaPeso.place(x=613,y=360)
 
-                            agregarReceta=Button(MenuInicio,text="Agregar una receta") 
-                            agregarReceta.place(x=345,y=360)
-    
-                            AlturaPeso=Button(MenuInicio,text="Agregar altura o peso") 
-                            AlturaPeso.place(x=613,y=360)
-    
+                        def volver():
+                            registro.place_forget()
+                            ingresoCedulaModificar.place_forget()
+                            cedulaModificar.place_forget()
+                            avisoModificar.place_forget()
+                            agregarPadecimiento.place_forget()
+                            agregarReceta.place_forget()
+                            AlturaPeso.place_forget()
+                            volverMenuDoctores.place_forget()
+                            inicioDeSesion()
 
-                            def agregarPadecimiento():
-                                NuevoPadecimiento = Label(MenuInicio, text="Está en el menú de agregar padecimientos", font=("Arial Bold",18))
-                                NuevoPadecimiento.place(x=250, y=55)
-                                padecimientoLabel = Label(MenuInicio, text="Agregue el nuevo padecimiento", font=("Arial Bold",14))
-                                padecimientoLabel.place(x=5, y=150)
-                                PadecimientoAgregado = Entry(MenuInicio)
-                                PadecimientoAgregado.place(x=225,y=155)
+                        volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores",command=volver)
+                        volverMenuDoctores.place(x=634,y=510)    
 
-                                def volver():
-                                    NuevoPadecimiento.place_forget()
-                                    padecimientoLabel.place_forget()
-                                    PadecimientoAgregado.place_forget()
-                                    volverMenuDoctores.place_forget()
-                                    inicioDeSesion()
-
-                                volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
-                                volverMenuDoctores.place(x=634,y=510)
-
-
-
-                            def agregarReceta():
-                                titulo1.place_forget()
-                                titulo2.place_forget()
-                                crear.place_forget()
-                                consultar.place_forget()
-                                modificar.place_forget()
-                                terminarSesion.place_forget()
-
-                                MenuReceta = Label(MenuInicio, text="Está en el menú de agregar receta", font=("Arial Bold",18))
-                                MenuReceta.place(x=250, y=55)
-                                recetaLabel = Label(MenuInicio, text="Agregue la nueva receta", font=("Arial Bold",14))
-                                recetaLabel.place(x=5, y=150)
-                                NuevaReceta = Entry(MenuInicio)
-                               NuevaReceta.place(x=225,y=155)
-                                
-                                def volver():
-                                    MenuReceta.place_forget()
-                                    recetaLabel.place_forget()
-                                    NuevaReceta.place_forget()
-                                    volverMenuDoctores.place_forget()
-                                    inicioDeSesion()
-                                    
-                               volverMenuDoctores = Button(MenuInicio,text="Volver al Menu de doctores", command = volver)
-                                volverMenuDoctores.place(x=634,y=510)
-
-                            def AlturaPeso():
-                                NuevaAlturaPeso = Label(MenuInicio, text="Está en el menú para cambiar peso o altura", font=("Arial Bold",18))
-                                NuevaAlturaPeso.place(x=250, y=55)
-                                alturaPesoLabel = Label(MenuInicio, text="Agregue el nuevo peso o altura", font=("Arial Bold",14))
-                                alturaPesoLabel.place(x=5, y=150)
-                                AlturaPesoAgregado = Entry(MenuInicio)
-                                AlturaPesoAgregado.place(x=225,y=155)
-    
-                               def volver():
-                                    NuevaAlturPeso.place_forget()
-                                    alturaPesoLabel.place_forget()
-                                    AlturaPesoAgregado.place_forget()
-                                    volverMenuDoctores.place_forget()
-                                    inicioDeSesion()
-    
-                                volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
-                                volverMenuDoctores.place(x=634,y=510)
-            
-                            def volver():
-                                registro.place_forget()
-                                ingresoCedulaModificar.place_forget()
-                                cedulaModificar.place_forget()
-                                avisoModificar.place_forget()
-                                agregarPadecimiento.place_forget()
-                                agregarReceta.place_forget()
-                                AlturaPeso.place_forget()
-                                volverMenuDoctores.place_forget()
-                                inicioDeSesion()
-
-                            volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
-                            volverMenuDoctores.place(x=634,y=510)  
-        
                 def cerrarSesion():
                     titulo1.place_forget()
                     titulo2.place_forget()
@@ -295,7 +245,139 @@ def menuPrincipal():
             for i in range(len(credencialesPacientes)):
                 if cedulaLogIn in credencialesPacientes[i] and contraseniaLogIn in credencialesPacientes[i]:
                     comprobador = True
-                    menupaciente = Label(MenuInicio, text="Entró a los pacientes").place(x=0, y=400)
+                    boton.place_forget() #.forget() elimina el widget para poder escribir más, hay que ir uno a uno
+                    bienvenida.place_forget()
+                    aviso.place_forget()
+                    ingresoCedula.place_forget()
+                    cedula.place_forget()
+                    ingresoContrasenia.place_forget()
+                    contrasenia.place_forget()
+                    comprobador = True
+
+                    titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Arial Bold",16), justify=CENTER)
+                    titulo3.place(x=200,y=55)
+                    titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER)
+                    titulo4.place(x=220,y=120)
+
+
+                    def consultarCita():
+                        titulo3.place_forget()
+                        titulo4.place_forget()
+                        solicitudCita.place_forget()
+                        consultaCita.place_forget()
+                        consultaReceta.place_forget()
+                        TerminarCerrarSecion.place_forget()
+
+                        mensaje1=Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER)
+                        mensaje1.place(x=200,y=75)
+                        hayCitas=Label(MenuInicio)
+                        hayCitas.place(x=85,y=150)
+                        diaCita = Label(MenuInicio)
+                        diaCita.place(x=320,y=150) ##
+                        doctorCitas = Label(MenuInicio)
+                        doctorCitas.place(x=390,y=150)
+                        nombreDoctor = Label(MenuInicio)
+                        nombreDoctor.place(x=85,y=170)##
+                        horario1 = Label(MenuInicio)
+                        horario1.place(x=198,y=170)
+                        horario2 = Label(MenuInicio)
+                        horario2.place(x=225,y=170)##
+                        NohayCitas = Label(MenuInicio)
+                        NohayCitas.place(x=105,y=150)
+                        for i in expedientesPacientes:
+                            if i[0] == cedulaLogIn:
+                                nombrePaciente = i[1]
+
+                        for i in citasMensuales.keys():
+                            for k in citasMensuales[i]:
+                                if nombrePaciente in k:
+                                    hayCitas.config(text="Segun nuetos registros usted tiene cita el dia ",font=("Arial",12), justify=CENTER)
+                                    diaCita.config(text=str(i),font=("Arial",12), justify=CENTER)##
+                                    doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER)
+                                    nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
+                                    horario1.config(text="a las ",font=("Arial",12), justify=CENTER)
+                                    horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                                    
+                                else:
+                                    NohayCitas.config(text="Segun nuetos registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
+                                    
+
+                        def volver():
+                            mensaje1.place_forget()
+                            hayCitas.place_forget()
+                            diaCita.place_forget()
+                            doctorCitas.place_forget()
+                            nombreDoctor.place_forget()
+                            horario1.place_forget()
+                            horario2.place_forget()
+                            NohayCitas.place_forget()
+                            botonVolver.place_forget()
+                            inicioDeSesion()
+
+                        botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
+                        botonVolver.place(x=510,y=300)
+
+
+                    def consultarReceta():
+                        titulo3.place_forget()
+                        titulo4.place_forget()
+                        solicitudCita.place_forget()
+                        consultaCita.place_forget()
+                        consultaReceta.place_forget()
+                        TerminarCerrarSecion.place_forget()
+
+                        mensaje1=Label(MenuInicio)
+                        mensaje1.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
+                        mensaje1.place(x=200,y=75)
+
+                        hayReceta=Label(MenuInicio)
+                        hayReceta.place(x=25,y=150)
+                        receta=Label(MenuInicio)
+                        receta.place(x=387,y=150) ##
+
+                        NohayRecetas=Label(MenuInicio)
+                        NohayRecetas.place(x=105,y=150)
+
+                        for i in expedientesPacientes:
+                                    if cedulaLogIn in i:
+                                        try:
+                                            if i[6] != "":
+                                                hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Arial",12), justify=CENTER)
+                                            receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
+                                        except:
+                                            NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
+
+                        def volver():
+                            mensaje1.place_forget()
+                            botonVolver.place_forget()
+                            hayReceta.place_forget()
+                            receta.place_forget()
+                            NohayRecetas.place_forget()
+                            inicioDeSesion()
+
+                        botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
+                        botonVolver.place(x=510,y=300)
+                        
+                        
+                    def cerrarSesion():
+                        titulo3.place_forget()
+                        titulo4.place_forget()
+                        solicitudCita.place_forget()
+                        consultaCita.place_forget()
+                        consultaReceta.place_forget()
+                        TerminarCerrarSecion.place_forget()
+                        menuPrincipal()
+
+                    
+                    solicitudCita=Button(MenuInicio,text="Solicitar una cita")
+                    solicitudCita.place(x=50,y=200)
+                    consultaCita=Button(MenuInicio,text="Consultar sobre una cita", command=consultarCita)
+                    consultaCita.place(x=220,y=200)
+                    consultaReceta=Button(MenuInicio,text="Consultar sobre una receta",command=consultarReceta)
+                    consultaReceta.place(x=410,y=200)
+
+                    TerminarCerrarSecion=Button(MenuInicio,text="Cerrar sesión",command=cerrarSesion)
+                    TerminarCerrarSecion.place(x=510,y=300)
                 
 
         if comprobador == False:
@@ -304,10 +386,8 @@ def menuPrincipal():
                 Label(text="Datos incorrectos, intente de nuevo").place(x=0, y=500)
             else:
                 Label(text="Lo sentimos no se encuentra en nuestra base de datos").place(x=100, y=500)
-    boton=Button(MenuInicio,text="Haz click aquí",command=inicioDeSesion)
+    boton=Button(MenuInicio,text="Iniciar sesión",command=inicioDeSesion)
     boton.place(x=360,y=310)
-    aviso2 = Label(MenuInicio,text="*Por favor darle al boton una vez haya terminado",font=("Arial Bold",14))
-    aviso2.place(x=190,y=350)
 
 menuPrincipal()
 MenuInicio.mainloop()
