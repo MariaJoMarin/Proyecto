@@ -23,7 +23,7 @@ for i in range(0,30):
 
 MenuInicio=Tk()
 MenuInicio.title("Menu de Inicio")
-MenuInicio.geometry("800x550")
+MenuInicio.geometry("800x600")
 MenuInicio.resizable(0,0)
 
 #widgets iniciales
@@ -39,7 +39,7 @@ def menuPrincipal():
 
     ingresoContrasenia = Label(MenuInicio,text="Digite su contraseña",font=(16))
     ingresoContrasenia.place(x=460,y=250)
-    contrasenia=Entry(MenuInicio)
+    contrasenia=Entry(MenuInicio,show="•")
     contrasenia.place(x=630,y=255)
     
     def inicioDeSesion():
@@ -259,6 +259,8 @@ def menuPrincipal():
                     cedula.place_forget()
                     ingresoContrasenia.place_forget()
                     contrasenia.place_forget()
+                    errorInicio.place_forget()
+
                     comprobador = True
 
                     titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Arial Bold",16), justify=CENTER)
@@ -276,42 +278,243 @@ def menuPrincipal():
                         TerminarCerrarSecion.place_forget()
                         
                         hayCitas=Label(MenuInicio)
-                        hayCitas.place(x=85,y=150)
+                        hayCitas.place(x=85,y=250)
                         diaCita = Label(MenuInicio)
-                        diaCita.place(x=360,y=150) ##
+                        diaCita.place(x=360,y=250) ##
                         doctorCitas = Label(MenuInicio)
-                        doctorCitas.place(x=390,y=150)
+                        doctorCitas.place(x=390,y=250)
                         nombreDoctor = Label(MenuInicio)
-                        nombreDoctor.place(x=85,y=170)##
+                        nombreDoctor.place(x=85,y=270)##
                         horario1 = Label(MenuInicio)
-                        horario1.place(x=228,y=170)
+                        horario1.place(x=228,y=270)
                         horario2 = Label(MenuInicio)
-                        horario2.place(x=265,y=170)##
+                        horario2.place(x=265,y=270)##
 
                         horarioCitas = Combobox(state="readonly")
                         rb1=Button(MenuInicio,text="1")
                         rb1.place(x=5, y=20)
+                        rb2=Button(MenuInicio, text="2")
+                        rb2.place(x=45, y=20)
+                        rb3=Button(MenuInicio, text="3")
+                        rb3.place(x=85, y=20)
+                        rb4=Button(MenuInicio, text="4")
+                        rb4.place(x=125, y=20)
+                        rb5=Button(MenuInicio, text="5")
+                        rb5.place(x=165, y=20)
+                        rb6=Button(MenuInicio, text="6")
+                        rb6.place(x=205, y=20)
+                        rb7=Button(MenuInicio, text="7")
+                        rb7.place(x=245, y=20)
+                        rb8=Button(MenuInicio, text="8")
+                        rb8.place(x=5, y=60)
+                        rb9=Button(MenuInicio, text="9")
+                        rb9.place(x=45, y=60)
+                        rb10=Button(MenuInicio, text="10")
+                        rb10.place(x=85, y=60)
+                        rb11=Button(MenuInicio, text="11")
+                        rb11.place(x=125, y=60)
+                        rb12=Button(MenuInicio, text="12")
+                        rb12.place(x=165, y=60)
+                        rb13=Button(MenuInicio, text="13")
+                        rb13.place(x=205, y=60)
+                        rb14=Button(MenuInicio, text="14")
+                        rb14.place(x=245, y=60)
+                        rb15=Button(MenuInicio, text="15")
+                        rb15.place(x=5, y=100)
+                        rb16=Button(MenuInicio, text="16")
+                        rb16.place(x=45, y=100)
+                        rb17=Button(MenuInicio, text="17")
+                        rb17.place(x=85, y=100)
+                        rb18=Button(MenuInicio, text="18")
+                        rb18.place(x=125, y=100)
+                        rb19=Button(MenuInicio, text="19")
+                        rb19.place(x=165, y=100)
+                        rb20=Button(MenuInicio, text="20")
+                        rb20.place(x=205, y=100)
+                        rb21=Button(MenuInicio, text="21")
+                        rb21.place(x=245, y=100)
+                        rb22=Button(MenuInicio, text="22")
+                        rb22.place(x=5, y=140)
+                        rb23=Button(MenuInicio, text="23")
+                        rb23.place(x=45, y=140)
+                        rb24=Button(MenuInicio, text="24")
+                        rb24.place(x=85, y=140)
+                        rb25=Button(MenuInicio, text="25")
+                        rb25.place(x=125, y=140)
+                        rb26=Button(MenuInicio, text="26")
+                        rb26.place(x=165, y=140)
+                        rb27=Button(MenuInicio, text="27")
+                        rb27.place(x=205, y=140)
+                        rb28=Button(MenuInicio, text="28")
+                        rb28.place(x=245, y=140)
+                        rb29=Button(MenuInicio, text="29")
+                        rb29.place(x=5, y=180)
+                        rb30=Button(MenuInicio, text="30")
+                        rb30.place(x=45, y=180)
+
                         avisoCita = Label(MenuInicio)
                         avisoCita.place(x=200, y=40)
                         solicitarBoton=Button(MenuInicio)
-                        
                         def cita():
                             horarios=[]
                             for k in citasMensuales[dia]:
                                 if k[0] == False:
                                        horarios.append(k[1])
                             horarioCitas.config(values=horarios)
-                            horarioCitas.place(x=200,y=20)
+                            horarioCitas.place(x=500,y=220)
                             solicitarBoton.config(text="Solicitar cita")
-                            solicitarBoton.place(x=200, y=50)
+                            solicitarBoton.place(x=500, y=250)
                         
                         def numero1():
                             global dia
                             dia = 1
                             MenuInicio.after(500, cita())
 
+                        def numero2():
+                            global dia
+                            dia = 2
+                            MenuInicio.after(500, cita())
+
+                        def numero3():
+                            global dia
+                            dia = 3
+                            MenuInicio.after(500, cita())
+
+                        def numero4():
+                            global dia
+                            dia = 4
+                            MenuInicio.after(500, cita())
+
+                        def numero5():
+                            global dia
+                            dia = 5
+                            MenuInicio.after(500, cita())
+
+                        def numero6():
+                            global dia
+                            dia = 6
+                            MenuInicio.after(500, cita())
                         
+                        def numero7():
+                            global dia
+                            dia = 7
+                            MenuInicio.after(500, cita())
+
+                        def numero8():
+                            global dia
+                            dia = 8
+                            MenuInicio.after(500, cita())
+
+                        def numero9():
+                            global dia
+                            dia = 9
+                            MenuInicio.after(500, cita())
+
+                        def numero10():
+                            global dia
+                            dia = 10
+                            MenuInicio.after(500, cita())
+
+                        def numero11():
+                            global dia
+                            dia = 11
+                            MenuInicio.after(500, cita())
+
+                        def numero12():
+                            global dia
+                            dia = 12
+                            MenuInicio.after(500, cita())
+
+                        def numero13():
+                            global dia
+                            dia = 13
+                            MenuInicio.after(500, cita())
+
+                        def numero14():
+                            global dia
+                            dia = 14
+                            MenuInicio.after(500, cita())  
+
+                        def numero15():
+                            global dia
+                            dia = 15
+                            MenuInicio.after(500, cita())
+
+                        def numero16():
+                            global dia
+                            dia = 16
+                            MenuInicio.after(500, cita())
+
+                        def numero17():
+                            global dia
+                            dia = 17
+                            MenuInicio.after(500, cita())
+
+                        def numero18():
+                            global dia
+                            dia = 18
+                            MenuInicio.after(500, cita())
                             
+                        def numero19():
+                            global dia
+                            dia = 19
+                            MenuInicio.after(500, cita())
+                        
+                        def numero20():
+                            global dia
+                            dia = 20
+                            MenuInicio.after(500, cita())
+
+                        def numero21():
+                            global dia
+                            dia = 21
+                            MenuInicio.after(500, cita())
+
+                        def numero22():
+                            global dia
+                            dia = 22
+                            MenuInicio.after(500, cita())
+
+                        def numero23():
+                            global dia
+                            dia = 23
+                            MenuInicio.after(500, cita())
+
+                        def numero24():
+                            global dia
+                            dia = 24
+                            MenuInicio.after(500, cita())
+
+                        def numero25():
+                            global dia
+                            dia = 25
+                            MenuInicio.after(500, cita())
+
+                        def numero26():
+                            global dia
+                            dia = 26
+                            MenuInicio.after(500, cita())
+
+                        def numero27():
+                            global dia
+                            dia = 27
+                            MenuInicio.after(500, cita())
+
+                        def numero28():
+                            global dia
+                            dia = 28
+                            MenuInicio.after(500, cita())
+
+                        def numero29():
+                            global dia
+                            dia = 29
+                            MenuInicio.after(500, cita())
+
+                        def numero30():
+                            global dia
+                            dia = 30
+                            MenuInicio.after(500, cita())
+
                         def procesoCita():
                             for k in citasMensuales[dia]:
                                 if k[1] == horarioCitas.get():
@@ -333,6 +536,36 @@ def menuPrincipal():
                             
                         def volver():
                             rb1.place_forget()
+                            rb2.place_forget()
+                            rb3.place_forget()
+                            rb4.place_forget()
+                            rb5.place_forget()
+                            rb6.place_forget()
+                            rb7.place_forget()
+                            rb8.place_forget()
+                            rb9.place_forget()
+                            rb10.place_forget()
+                            rb11.place_forget()
+                            rb12.place_forget()
+                            rb13.place_forget()
+                            rb14.place_forget()
+                            rb15.place_forget()
+                            rb16.place_forget()
+                            rb17.place_forget()
+                            rb18.place_forget()
+                            rb19.place_forget()
+                            rb20.place_forget()
+                            rb21.place_forget()
+                            rb22.place_forget()
+                            rb23.place_forget()
+                            rb24.place_forget()
+                            rb25.place_forget()
+                            rb26.place_forget()
+                            rb27.place_forget()
+                            rb28.place_forget()
+                            rb29.place_forget()
+                            rb30.place_forget()
+
                             botonVolver.place_forget()
                             horarioCitas.place_forget()
                             hayCitas.place_forget()
@@ -343,7 +576,38 @@ def menuPrincipal():
                             horario1.place_forget()
                             horario2.place_forget()
                             inicioDeSesion()
-                        rb1.config(command=numero1)
+
+                        rb1.config(command=numero1, width = 4, height = 2)
+                        rb2.config(command=numero2, width = 4, height = 2)
+                        rb3.config(command=numero3, width = 4, height = 2)
+                        rb4.config(command=numero4, width = 4, height = 2)
+                        rb5.config(command=numero5, width = 4, height = 2)
+                        rb6.config(command=numero6, width = 4, height = 2)
+                        rb7.config(command=numero7, width = 4, height = 2)
+                        rb8.config(command=numero8, width = 4, height = 2)
+                        rb9.config(command=numero9, width = 4, height = 2)
+                        rb10.config(command=numero10, width = 4, height = 2)
+                        rb11.config(command=numero11, width = 4, height = 2)
+                        rb12.config(command=numero12, width = 4, height = 2)
+                        rb13.config(command=numero13, width = 4, height = 2)
+                        rb14.config(command=numero14, width = 4, height = 2)
+                        rb15.config(command=numero15, width = 4, height = 2)
+                        rb16.config(command=numero16, width = 4, height = 2)
+                        rb17.config(command=numero17, width = 4, height = 2)
+                        rb18.config(command=numero18, width = 4, height = 2)
+                        rb19.config(command=numero19, width = 4, height = 2)
+                        rb20.config(command=numero20, width = 4, height = 2)
+                        rb21.config(command=numero21, width = 4, height = 2)
+                        rb22.config(command=numero22, width = 4, height = 2)
+                        rb23.config(command=numero23, width = 4, height = 2)
+                        rb24.config(command=numero24, width = 4, height = 2)
+                        rb25.config(command=numero25, width = 4, height = 2)
+                        rb26.config(command=numero26, width = 4, height = 2)
+                        rb27.config(command=numero27, width = 4, height = 2)
+                        rb28.config(command=numero28, width = 4, height = 2)
+                        rb29.config(command=numero29, width = 4, height = 2)
+                        rb30.config(command=numero30, width = 4, height = 2)
+
                         solicitarBoton.config(command=procesoCita)
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
                         botonVolver.place(x=510,y=300)
@@ -472,9 +736,9 @@ def menuPrincipal():
         if comprobador == False:
             intentos = intentos - 1
             if intentos > 0:
-                Label(text="Datos incorrectos, intente de nuevo").place(x=0, y=500)
+                errorInicio.Label(text="Datos incorrectos, intente de nuevo").place(x=0, y=500)
             else:
-                Label(text="Lo sentimos no se encuentra en nuestra base de datos").place(x=100, y=500)
+                errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos").place(x=100, y=500)
     boton=Button(MenuInicio,text="Iniciar sesión",command=inicioDeSesion)
     boton.place(x=360,y=310)
 
