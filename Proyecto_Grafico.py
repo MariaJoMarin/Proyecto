@@ -28,6 +28,7 @@ MenuInicio.resizable(0,0)
 
 #widgets iniciales
 def menuPrincipal():
+    errorInicio=Label(MenuInicio)
     bienvenida = Label(MenuInicio,text="Bienvenido al inicio de sesión del hospital",font=("Arial Bold",16), justify=CENTER)
     bienvenida.place(x=190,y=55)
     aviso = Label(MenuInicio,text="Por favor ingresar lo siguiente",font=("Arial",14), justify=CENTER)
@@ -144,9 +145,18 @@ def menuPrincipal():
                         cedulaConsulta.place(x=300,y=124)
                         expediente=Label(MenuInicio,text="Expediente del paciente",font=("Arial",16,"bold","italic"), justify=CENTER)
                         expediente.place(x=5,y=390)
-
-                        salidaExpediente = Label(MenuInicio)
-                        salidaExpediente.place(x=5, y=420)
+                        noCedula = Label(MenuInicio,text="Numero de cédula")
+                        noCedula.place(x=5, y=420)
+                        salidaCedula = Label(MenuInicio)
+                        salidaCedula.place(x=105, y=420)
+                        nombrePaciente=Label(MenuInicio, text="Nombre")
+                        nombrePaciente.place(x=205, y=420)
+                        salidaNombre=Label(MenuInicio)
+                        salidaNombre.place(x=255, y=420)
+                        edadPaciente=Label(MenuInicio, text="Edad")
+                        edadPaciente.place(x=365, y=420)
+                        salidaEdad=Label(MenuInicio)
+                        salidaEdad.place(x=405, y=420)
                         padecimientolbl = Label(MenuInicio)
                         padecimientolbl.place(x=5, y=200)
                         agregarPadecimiento = Entry(MenuInicio)
@@ -166,9 +176,10 @@ def menuPrincipal():
                             for i in range(len(expedientesPacientes)):
                                 for k in range(len(expedientesPacientes[i])):
                                     if expedientesPacientes[i][k] == cedula:
-                                        expedienteCorrecto = str(expedientesPacientes[i])
                                         posicionExpediente = i
-                                        salidaExpediente.config(text=expedienteCorrecto, font=(14))
+                                        salidaCedula.config(text=str(expedientesPacientes[i][0]), font=(14))
+                                        salidaNombre.config(text=expedientesPacientes[i][1])
+                                        salidaEdad.config(text=str(expedientesPacientes[i][2]))
                                         padecimientolbl.config(text="Agregar padecimiento")
                                         agregarPadecimiento.place(x=150,y=200)
                                         recetalbl.config(text="Agregar receta")
@@ -207,7 +218,12 @@ def menuPrincipal():
                         
                         
                         def volver():
-                            salidaExpediente.place_forget()
+                            noCedula.place_forget()
+                            salidaCedula.place_forget()
+                            nombrePaciente.place_forget()
+                            salidaNombre.place_forget()
+                            edadPaciente.place_forget()
+                            salidaEdad.place_forget()
                             registro.place_forget()
                             ingresoCedulaConsulta.place_forget()
                             cedulaConsulta.place_forget()
