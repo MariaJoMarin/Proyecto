@@ -157,6 +157,22 @@ def menuPrincipal():
                         edadPaciente.place(x=365, y=420)
                         salidaEdad=Label(MenuInicio)
                         salidaEdad.place(x=405, y=420)
+                        alturaPaciente=Label(MenuInicio, text="Altura")
+                        alturaPaciente.place(x=5, y=470)
+                        salidaAltura=Label(MenuInicio)
+                        salidaAltura.place(x=45, y=470)
+                        pesoPaciente=Label(MenuInicio, text="Peso")
+                        pesoPaciente.place(x=95, y=470)
+                        salidaPeso=Label(MenuInicio)
+                        salidaPeso.place(x=125, y=470)
+                        padecimientoPaciente=Label(MenuInicio, text="Padecimiento")
+                        padecimientoPaciente.place(x=200, y=470)
+                        salidaPadecimiento=Label(MenuInicio)
+                        salidaPadecimiento.place(x=300, y=470)
+                        recetaPaciente=Label(MenuInicio, text="Receta")
+                        recetaPaciente.place(x=365,y=470)
+                        salidaReceta=Label(MenuInicio)
+                        salidaReceta.place(x=405, y=470)
                         padecimientolbl = Label(MenuInicio)
                         padecimientolbl.place(x=5, y=200)
                         agregarPadecimiento = Entry(MenuInicio)
@@ -180,6 +196,22 @@ def menuPrincipal():
                                         salidaCedula.config(text=str(expedientesPacientes[i][0]), font=(14))
                                         salidaNombre.config(text=expedientesPacientes[i][1])
                                         salidaEdad.config(text=str(expedientesPacientes[i][2]))
+                                        try:
+                                            salidaAltura.config(text=expedientesPacientes[i][3])
+                                        except:
+                                            salidaAltura.config(text="Sin datos")
+                                        try:
+                                            salidaPeso.config(text=expedientesPacientes[i][4])
+                                        except:
+                                            salidaPeso.config(text="Sin datos")
+                                        try:
+                                            salidaPadecimiento.config(text=expedientesPacientes[i][5])
+                                        except:
+                                            salidaPadecimiento.config(text="Sin datos")
+                                        try:
+                                            salidaReceta.config(text=expedientesPacientes[i][6])
+                                        except:
+                                            salidaReceta.config(text="Sin datos")
                                         padecimientolbl.config(text="Agregar padecimiento")
                                         agregarPadecimiento.place(x=150,y=200)
                                         recetalbl.config(text="Agregar receta")
@@ -196,22 +228,30 @@ def menuPrincipal():
                                     expedientesPacientes[posicionExpediente][3] = str(agregarAltura.get())
                                 except:
                                     expedientesPacientes[posicionExpediente].append(str(agregarAltura.get()))
+                                salidaAltura.config(text=expedientesPacientes[posicionExpediente][3])
 
                             if str(agregarPeso.get()) != "":
-                                    try: 
-                                        expedientesPacientes[posicionExpediente][4] = str(agregarPeso.get())
-                                    except:
-                                        expedientesPacientes[posicionExpediente].append(str(agregarPeso.get()))
+                                try: 
+                                    expedientesPacientes[posicionExpediente][4] = str(agregarPeso.get())
+                                except:
+                                    expedientesPacientes[posicionExpediente].append(str(agregarPeso.get()))
+                                salidaPeso.config(text=expedientesPacientes[posicionExpediente][4])
                            
                             if agregarPadecimiento.get() != "":
-                                expedientesPacientes[posicionExpediente].append(agregarPadecimiento.get())
+                                try:
+                                    expedientesPacientes[posicionExpediente][5] = agregarPadecimiento.get()
+                                except:
+                                    expedientesPacientes[posicionExpediente].append(agregarPadecimiento.get())
+                                salidaPadecimiento.config(text=expedientesPacientes[posicionExpediente][5])
 
                             if agregarReceta.get() != "":
-                                expedientesPacientes[posicionExpediente].append(agregarReceta.get())
+                                try:
+                                    expedientesPacientes[pposicionExpediente][6] = agregarReceta.get()
+                                except:
+                                    expedientesPacientes[posicionExpediente].append(agregarReceta.get())
+                                salidaReceta.config(text=expedientesPacientes[posicionExpediente][6])
 
-                            salidaExpediente.config(text="")
-                            salidaExpediente.config(text=str(expedientesPacientes[posicionExpediente]))
-
+                            
                         botonConsulta=Button(MenuInicio,text="Buscar expediente", command = busqueda) 
                         botonConsulta.place(x=20,y=160)
                         modificarEx.config(command=modficarExpediente)
@@ -224,6 +264,14 @@ def menuPrincipal():
                             salidaNombre.place_forget()
                             edadPaciente.place_forget()
                             salidaEdad.place_forget()
+                            alturaPaciente.place_forget()
+                            salidaAltura.place_forget()
+                            pesoPaciente.place_forget()
+                            salidaPeso.place_forget()
+                            padecimientoPaciente.place_forget()
+                            salidaPadecimiento.place_forget()
+                            recetaPaciente.place_forget()
+                            salidaReceta.place_forget()
                             registro.place_forget()
                             ingresoCedulaConsulta.place_forget()
                             cedulaConsulta.place_forget()
