@@ -61,9 +61,9 @@ def menuPrincipal():
                 comprobador = True
 
                 titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER)
-                titulo1.place(x=300,y=55)
+                titulo1.place(x=301,y=105)
                 titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER)
-                titulo2.place(x=320,y=135)
+                titulo2.place(x=325,y=205)
                 
                 def crearExpedientes():
                         titulo1.place_forget()
@@ -246,7 +246,7 @@ def menuPrincipal():
 
                             if agregarReceta.get() != "":
                                 try:
-                                    expedientesPacientes[pposicionExpediente][6] = agregarReceta.get()
+                                    expedientesPacientes[posicionExpediente][6] = agregarReceta.get()
                                 except:
                                     expedientesPacientes[posicionExpediente].append(agregarReceta.get())
                                 salidaReceta.config(text=expedientesPacientes[posicionExpediente][6])
@@ -303,11 +303,11 @@ def menuPrincipal():
                     menuPrincipal()
 
                 crear=Button(MenuInicio,text="Crear un expediente", command = crearExpedientes)
-                crear.place(x=140,y=275)
+                crear.place(x=150,y=325)
                 consultar=Button(MenuInicio,text="Consultar un expediente", command = consultarExpediente)
-                consultar.place(x=320,y=275)
+                consultar.place(x=520,y=325)
                 terminarSesion=Button(MenuInicio,text="Cerrar sesión", command = cerrarSesion)
-                terminarSesion.place(x=675,y=485)
+                terminarSesion.place(x=687,y=547)
 
 
            
@@ -328,9 +328,9 @@ def menuPrincipal():
                     comprobador = True
 
                     titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Arial Bold",16), justify=CENTER)
-                    titulo3.place(x=200,y=55)
+                    titulo3.place(x=301,y=105)
                     titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER)
-                    titulo4.place(x=220,y=120)
+                    titulo4.place(x=327,y=200)
 
 
                     def solicitarCita():
@@ -355,66 +355,68 @@ def menuPrincipal():
                         horario2.place(x=265,y=270)##
 
                         horarioCitas = Combobox(state="readonly")
+                        calendario=Label(MenuInicio,text="Calendario",font=("Arial",16))
+                        calendario.place(x=350,y=20)
                         rb1=Button(MenuInicio,text="1")
-                        rb1.place(x=5, y=20)
+                        rb1.place(x=5, y=60)
                         rb2=Button(MenuInicio, text="2")
-                        rb2.place(x=45, y=20)
+                        rb2.place(x=45, y=60)
                         rb3=Button(MenuInicio, text="3")
-                        rb3.place(x=85, y=20)
+                        rb3.place(x=85, y=60)
                         rb4=Button(MenuInicio, text="4")
-                        rb4.place(x=125, y=20)
+                        rb4.place(x=125, y=60)
                         rb5=Button(MenuInicio, text="5")
-                        rb5.place(x=165, y=20)
+                        rb5.place(x=165, y=60)
                         rb6=Button(MenuInicio, text="6")
-                        rb6.place(x=205, y=20)
+                        rb6.place(x=205, y=60)
                         rb7=Button(MenuInicio, text="7")
-                        rb7.place(x=245, y=20)
+                        rb7.place(x=245, y=60)
                         rb8=Button(MenuInicio, text="8")
-                        rb8.place(x=5, y=60)
+                        rb8.place(x=5, y=100)
                         rb9=Button(MenuInicio, text="9")
-                        rb9.place(x=45, y=60)
+                        rb9.place(x=45, y=100)
                         rb10=Button(MenuInicio, text="10")
-                        rb10.place(x=85, y=60)
+                        rb10.place(x=85, y=100)
                         rb11=Button(MenuInicio, text="11")
-                        rb11.place(x=125, y=60)
+                        rb11.place(x=125, y=100)
                         rb12=Button(MenuInicio, text="12")
-                        rb12.place(x=165, y=60)
+                        rb12.place(x=165, y=100)
                         rb13=Button(MenuInicio, text="13")
-                        rb13.place(x=205, y=60)
+                        rb13.place(x=205, y=100)
                         rb14=Button(MenuInicio, text="14")
-                        rb14.place(x=245, y=60)
+                        rb14.place(x=245, y=100)
                         rb15=Button(MenuInicio, text="15")
-                        rb15.place(x=5, y=100)
+                        rb15.place(x=5, y=140)
                         rb16=Button(MenuInicio, text="16")
-                        rb16.place(x=45, y=100)
+                        rb16.place(x=45, y=140)
                         rb17=Button(MenuInicio, text="17")
-                        rb17.place(x=85, y=100)
+                        rb17.place(x=85, y=140)
                         rb18=Button(MenuInicio, text="18")
-                        rb18.place(x=125, y=100)
+                        rb18.place(x=125, y=140)
                         rb19=Button(MenuInicio, text="19")
-                        rb19.place(x=165, y=100)
+                        rb19.place(x=165, y=140)
                         rb20=Button(MenuInicio, text="20")
-                        rb20.place(x=205, y=100)
+                        rb20.place(x=205, y=140)
                         rb21=Button(MenuInicio, text="21")
-                        rb21.place(x=245, y=100)
+                        rb21.place(x=245, y=140)
                         rb22=Button(MenuInicio, text="22")
-                        rb22.place(x=5, y=140)
+                        rb22.place(x=5, y=180)
                         rb23=Button(MenuInicio, text="23")
-                        rb23.place(x=45, y=140)
+                        rb23.place(x=45, y=180)
                         rb24=Button(MenuInicio, text="24")
-                        rb24.place(x=85, y=140)
+                        rb24.place(x=85, y=180)
                         rb25=Button(MenuInicio, text="25")
-                        rb25.place(x=125, y=140)
+                        rb25.place(x=125, y=180)
                         rb26=Button(MenuInicio, text="26")
-                        rb26.place(x=165, y=140)
+                        rb26.place(x=165, y=180)
                         rb27=Button(MenuInicio, text="27")
-                        rb27.place(x=205, y=140)
+                        rb27.place(x=205, y=180)
                         rb28=Button(MenuInicio, text="28")
-                        rb28.place(x=245, y=140)
+                        rb28.place(x=245, y=180)
                         rb29=Button(MenuInicio, text="29")
-                        rb29.place(x=5, y=180)
+                        rb29.place(x=5, y=220)
                         rb30=Button(MenuInicio, text="30")
-                        rb30.place(x=45, y=180)
+                        rb30.place(x=45, y=220)
 
                         avisoCita = Label(MenuInicio)
                         avisoCita.place(x=200, y=40)
@@ -425,9 +427,9 @@ def menuPrincipal():
                                 if k[0] == False:
                                        horarios.append(k[1])
                             horarioCitas.config(values=horarios)
-                            horarioCitas.place(x=500,y=220)
+                            horarioCitas.place(x=300,y=320)
                             solicitarBoton.config(text="Solicitar cita")
-                            solicitarBoton.place(x=500, y=250)
+                            solicitarBoton.place(x=450, y=317)
                         
                         def numero1():
                             global dia
@@ -674,7 +676,7 @@ def menuPrincipal():
 
                         solicitarBoton.config(command=procesoCita)
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
-                        botonVolver.place(x=510,y=300)
+                        botonVolver.place(x=617,y=547)
 
 
                     def consultarCita():
@@ -686,21 +688,21 @@ def menuPrincipal():
                         TerminarCerrarSecion.place_forget()
 
                         mensaje1=Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER)
-                        mensaje1.place(x=200,y=75)
+                        mensaje1.place(x=300,y=185)
                         hayCitas=Label(MenuInicio)
-                        hayCitas.place(x=85,y=150)
+                        hayCitas.place(x=95,y=300)
                         diaCita = Label(MenuInicio)
-                        diaCita.place(x=460,y=150) ##
+                        diaCita.place(x=425,y=300) ##
                         doctorCitas = Label(MenuInicio)
-                        doctorCitas.place(x=490,y=150)
+                        doctorCitas.place(x=445,y=300)
                         nombreDoctor = Label(MenuInicio)
-                        nombreDoctor.place(x=85,y=170)##
+                        nombreDoctor.place(x=550,y=300)##
                         horario1 = Label(MenuInicio)
-                        horario1.place(x=228,y=170)
+                        horario1.place(x=95,y=335)
                         horario2 = Label(MenuInicio)
-                        horario2.place(x=265,y=170)##
+                        horario2.place(x=135,y=335)##
                         NohayCitas = Label(MenuInicio)
-                        NohayCitas.place(x=105,y=150)
+                        NohayCitas.place(x=195,y=300)
                         for i in expedientesPacientes:
                             if i[0] == cedulaLogIn:
                                 nombrePaciente = i[1]
@@ -732,7 +734,7 @@ def menuPrincipal():
                             inicioDeSesion()
 
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
-                        botonVolver.place(x=510,y=300)
+                        botonVolver.place(x=617,y=547)
 
 
                     def consultarReceta():
@@ -745,15 +747,15 @@ def menuPrincipal():
 
                         mensaje1=Label(MenuInicio)
                         mensaje1.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
-                        mensaje1.place(x=200,y=75)
+                        mensaje1.place(x=300,y=185)
 
                         hayReceta=Label(MenuInicio)
-                        hayReceta.place(x=25,y=150)
+                        hayReceta.place(x=205,y=300)
                         receta=Label(MenuInicio)
-                        receta.place(x=387,y=150) ##
+                        receta.place(x=570,y=300) ##
 
                         NohayRecetas=Label(MenuInicio)
-                        NohayRecetas.place(x=105,y=150)
+                        NohayRecetas.place(x=195,y=300)
 
                         for i in expedientesPacientes:
                                     if cedulaLogIn in i:
@@ -773,7 +775,7 @@ def menuPrincipal():
                             inicioDeSesion()
 
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
-                        botonVolver.place(x=510,y=300)
+                        botonVolver.place(x=617,y=547)
                         
                         
                     def cerrarSesion():
@@ -787,14 +789,14 @@ def menuPrincipal():
 
                     
                     solicitudCita=Button(MenuInicio,text="Solicitar una cita", command=solicitarCita)
-                    solicitudCita.place(x=50,y=200)
+                    solicitudCita.place(x=120,y=325)
                     consultaCita=Button(MenuInicio,text="Consultar sobre una cita", command=consultarCita)
-                    consultaCita.place(x=220,y=200)
+                    consultaCita.place(x=320,y=325)
                     consultaReceta=Button(MenuInicio,text="Consultar sobre una receta",command=consultarReceta)
-                    consultaReceta.place(x=410,y=200)
+                    consultaReceta.place(x=520,y=325)
 
                     TerminarCerrarSecion=Button(MenuInicio,text="Cerrar sesión",command=cerrarSesion)
-                    TerminarCerrarSecion.place(x=510,y=300)
+                    TerminarCerrarSecion.place(x=687,y=547)
                 
 
         if comprobador == False:
