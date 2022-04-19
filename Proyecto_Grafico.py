@@ -19,26 +19,24 @@ for i in range(0,30):
     citasMensuales[i+1] = [[False,"7:00 am",credencialesDoctores[randList[0]][1],"Paciente"],[False,"8:00 am",credencialesDoctores[randList[1]][1],"Paciente"],[False,"9:00 am",credencialesDoctores[randList[2]][1],"Paciente"],[False,"10:00 am",credencialesDoctores[randList[3]][1],"Paciente"],[False,"11:00 am",credencialesDoctores[randList[4]][1],"Paciente"],[False,"12:00 pm",credencialesDoctores[randList[5]][1],"Paciente"],[False,"1:00 pm",credencialesDoctores[randList[6]][1],"Paciente"],[False,"2:00 pm",credencialesDoctores[randList[7]][1],"Paciente"],[False,"3:00 pm",credencialesDoctores[randList[8]][1],"Paciente"],[False,"4:00 pm",credencialesDoctores[randList[9]][1],"Paciente"]]
 
 
-    
-
 MenuInicio=Tk()
 MenuInicio.title("Menu de Inicio")
 MenuInicio.geometry("800x600")
 MenuInicio.resizable(0,0)
-
+MenuInicio['bg'] = 'AliceBlue'
 #widgets iniciales
 def menuPrincipal():
     errorInicio=Label(MenuInicio)
-    bienvenida = Label(MenuInicio,text="Bienvenido al inicio de sesión del hospital",font=("Arial Bold",16), justify=CENTER)
-    bienvenida.place(x=190,y=55)
-    aviso = Label(MenuInicio,text="Por favor ingresar lo siguiente",font=("Arial",14), justify=CENTER)
-    aviso.place(x=255,y=150)
-    ingresoCedula = Label(MenuInicio,text="Ingrese su número de cédula",font=(16))
-    ingresoCedula.place(x=25,y=250)
+    bienvenida = Label(MenuInicio,text="Bienvenido al inicio de sesión del hospital",font=("Times",16), justify=CENTER)
+    bienvenida.place(x=250,y=55)
+    aviso = Label(MenuInicio,text="Por favor ingresar la información",font=("Times",14), justify=CENTER)
+    aviso.place(x=260,y=150)
+    ingresoCedula = Label(MenuInicio,text="Identificación",font=("Times",14))
+    ingresoCedula.place(x=40,y=250)
     cedula=Entry(MenuInicio)
     cedula.place(x=250,y=255)
 
-    ingresoContrasenia = Label(MenuInicio,text="Digite su contraseña",font=(16))
+    ingresoContrasenia = Label(MenuInicio,text="Contraseña",font=("Times",14))
     ingresoContrasenia.place(x=460,y=250)
     contrasenia=Entry(MenuInicio,show="•")
     contrasenia.place(x=630,y=255)
@@ -106,6 +104,8 @@ def menuPrincipal():
 
                         botonCrear=Button(MenuInicio,text="Crear expediente",command=registrar) 
                         botonCrear.place(x=20,y=270)
+                        botonCrear['bg'] = 'AliceBlue'
+                        botonCrear['fg'] = 'SeaGreen'
 
                         def volver():
                             informacion.place_forget()
@@ -123,6 +123,7 @@ def menuPrincipal():
 
                         volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
                         volverMenuDoctores.place(x=634,y=510)
+                        volverMenuDoctores['bg'] = 'azure'
 
 
 
@@ -186,6 +187,8 @@ def menuPrincipal():
                         pesolbl.place(x=5,y=240)
                         agregarPeso=Entry(MenuInicio)
                         modificarEx=Button(MenuInicio,text="Modificar expediente")
+                        modificarEx['bg'] = 'AliceBlue'
+                        modificarEx['fg'] = 'BlueViolet'
                         def busqueda():
                             global posicionExpediente
                             cedula = int(cedulaConsulta.get())
@@ -254,6 +257,8 @@ def menuPrincipal():
                             
                         botonConsulta=Button(MenuInicio,text="Buscar expediente", command = busqueda) 
                         botonConsulta.place(x=20,y=160)
+                        botonConsulta['bg'] = 'AliceBlue'
+                        botonConsulta['fg'] = 'BlueViolet'
                         modificarEx.config(command=modficarExpediente)
                         
                         
@@ -292,6 +297,7 @@ def menuPrincipal():
                         
                         volverMenuDoctores=Button(MenuInicio,text="Volver al Menu de doctores", command=volver)
                         volverMenuDoctores.place(x=634,y=510)
+                        volverMenuDoctores['bg'] = 'azure'
 
                         
                 def cerrarSesion():
@@ -304,11 +310,15 @@ def menuPrincipal():
 
                 crear=Button(MenuInicio,text="Crear un expediente", command = crearExpedientes)
                 crear.place(x=150,y=325)
+                crear['bg'] = 'AliceBlue'
+                crear['fg'] = 'BlueViolet'
                 consultar=Button(MenuInicio,text="Consultar un expediente", command = consultarExpediente)
                 consultar.place(x=520,y=325)
+                consultar['bg'] = 'AliceBlue'
+                consultar['fg'] = 'BlueViolet'
                 terminarSesion=Button(MenuInicio,text="Cerrar sesión", command = cerrarSesion)
                 terminarSesion.place(x=687,y=547)
-
+                terminarSesion['bg'] = 'azure'
 
            
         else:
@@ -418,9 +428,8 @@ def menuPrincipal():
                         rb30=Button(MenuInicio, text="30")
                         rb30.place(x=45, y=220)
 
-                        avisoCita = Label(MenuInicio)
-                        avisoCita.place(x=200, y=40)
                         solicitarBoton=Button(MenuInicio)
+                        solicitarBoton['bg'] = 'AliceBlue'
                         def cita():
                             horarios=[]
                             for k in citasMensuales[dia]:
@@ -430,7 +439,8 @@ def menuPrincipal():
                             horarioCitas.place(x=300,y=320)
                             solicitarBoton.config(text="Solicitar cita")
                             solicitarBoton.place(x=450, y=317)
-                        
+                            solicitarBoton['bg'] = 'AliceBlue'
+                            solicitarBoton['fg'] = 'BlueViolet'
                         def numero1():
                             global dia
                             dia = 1
@@ -631,7 +641,7 @@ def menuPrincipal():
                             rb28.place_forget()
                             rb29.place_forget()
                             rb30.place_forget()
-
+                            calendario.place_forget()
                             botonVolver.place_forget()
                             horarioCitas.place_forget()
                             hayCitas.place_forget()
@@ -677,6 +687,7 @@ def menuPrincipal():
                         solicitarBoton.config(command=procesoCita)
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
                         botonVolver.place(x=617,y=547)
+                        botonVolver['bg'] = 'azure'
 
 
                     def consultarCita():
@@ -735,6 +746,7 @@ def menuPrincipal():
 
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
                         botonVolver.place(x=617,y=547)
+                        botonVolver['bg'] = 'azure'
 
 
                     def consultarReceta():
@@ -776,6 +788,7 @@ def menuPrincipal():
 
                         botonVolver=Button(MenuInicio,text="Volver al menu de pacientes",command=volver)
                         botonVolver.place(x=617,y=547)
+                        botonVolver['bg'] = 'azure'
                         
                         
                     def cerrarSesion():
@@ -790,13 +803,19 @@ def menuPrincipal():
                     
                     solicitudCita=Button(MenuInicio,text="Solicitar una cita", command=solicitarCita)
                     solicitudCita.place(x=120,y=325)
+                    solicitudCita['bg'] = 'AliceBlue'
+                    solicitudCita['fg'] = 'BlueViolet'
                     consultaCita=Button(MenuInicio,text="Consultar sobre una cita", command=consultarCita)
                     consultaCita.place(x=320,y=325)
+                    consultaCita['bg'] = 'AliceBlue'
+                    consultaCita['fg'] = 'BlueViolet'
                     consultaReceta=Button(MenuInicio,text="Consultar sobre una receta",command=consultarReceta)
                     consultaReceta.place(x=520,y=325)
-
+                    consultaReceta['bg'] = 'AliceBlue'
+                    consultaReceta['fg'] = 'BlueViolet'
                     TerminarCerrarSecion=Button(MenuInicio,text="Cerrar sesión",command=cerrarSesion)
                     TerminarCerrarSecion.place(x=687,y=547)
+                    TerminarCerrarSecion['bg'] = 'azure'
                 
 
         if comprobador == False:
@@ -805,8 +824,10 @@ def menuPrincipal():
                 errorInicio.Label(text="Datos incorrectos, intente de nuevo").place(x=0, y=500)
             else:
                 errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos").place(x=100, y=500)
-    boton=Button(MenuInicio,text="Iniciar sesión",command=inicioDeSesion)
-    boton.place(x=360,y=310)
+    boton=Button(MenuInicio,text="Iniciar sesión",command=inicioDeSesion, height = 3, width = 13)
+    boton.place(x=350,y=310)
+    boton['bg'] = 'AliceBlue'
+    boton['fg'] = 'cyan4'
 
 menuPrincipal()
 MenuInicio.mainloop()
