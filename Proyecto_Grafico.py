@@ -10,9 +10,8 @@ intentos = 3
 cedula = 0 
 edad = 0
 nombreCompleto = ""
-#Holiz4 <3 143 1432 
 citasMensuales={}
-for i in range(0,30):
+for i in range(0,31):
     for k in range(0,10):
         a=random.randint(0,3)
         randList.append(a)
@@ -102,6 +101,8 @@ horario1 = Label(MenuInicio)
 horario2 = Label(MenuInicio)
 horarioCitas = Combobox(state="readonly")
 calendario=Label(MenuInicio,text="Calendario",font=("Arial",16))
+mes = Label(MenuInicio, text="Mayo", font=("Times",16))
+mesEscogido:Combobox(state="readonly")
 rb1=Button(MenuInicio,text="1")
 rb2=Button(MenuInicio, text="2")
 rb3=Button(MenuInicio, text="3")
@@ -132,11 +133,12 @@ rb27=Button(MenuInicio, text="27")
 rb28=Button(MenuInicio, text="28")
 rb29=Button(MenuInicio, text="29")
 rb30=Button(MenuInicio, text="30")
+rb31=Button(MenuInicio,text="31")
 solicitarBoton=Button(MenuInicio)
 volverSolicitudCitas=Button(MenuInicio,text="Volver al menu de pacientes")
     #widgets consultarCitas
-mensaje1=Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER)
-hayCitas=Label(MenuInicio)
+mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER)
+hayCitas = Label(MenuInicio)
 diaCita = Label(MenuInicio)
 doctorCitas = Label(MenuInicio)
 nombreDoctor = Label(MenuInicio)
@@ -182,7 +184,7 @@ def crearExpedientes():
         botonCrear.config(command=registrar)
         botonCrear.place(x=20,y=270)
         botonCrear['bg'] = 'AliceBlue'
-        botonCrear['fg'] = 'SeaGreen'
+        botonCrear['fg'] = 'SaddleBrown'
 
         def volver():
             informacion.place_forget()
@@ -357,43 +359,46 @@ def solicitarCita():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
 
-    hayCitas.place(x=85,y=250)
-    diaCita.place(x=360,y=250) ##
-    doctorCitas.place(x=390,y=250)
-    nombreDoctor.place(x=85,y=270)##
-    horario1.place(x=228,y=270)
-    horario2.place(x=265,y=270)
+    hayCitas.place(x=85,y=355)
+    diaCita.place(x=340,y=355) ##
+    doctorCitas.place(x=360,y=355)
+    nombreDoctor.place(x=85,y=375)##
+    horario1.place(x=228,y=375)
+    horario2.place(x=265,y=375)
     calendario.place(x=350,y=20)
-    rb1.place(x=5, y=60)
-    rb2.place(x=45, y=60)
-    rb3.place(x=85, y=60)
-    rb4.place(x=125, y=60)
-    rb5.place(x=165, y=60)
-    rb6.place(x=205, y=60)
-    rb7.place(x=245, y=60)
-    rb8.place(x=5, y=100)
-    rb9.place(x=45, y=100)
-    rb10.place(x=85, y=100)
-    rb11.place(x=125, y=100)
-    rb12.place(x=165, y=100)
-    rb13.place(x=205, y=100)
-    rb14.place(x=245, y=100)
-    rb15.place(x=5, y=140)
-    rb16.place(x=45, y=140)
-    rb17.place(x=85, y=140)
-    rb18.place(x=125, y=140)
-    rb19.place(x=165, y=140)
-    rb20.place(x=205, y=140)
-    rb21.place(x=245, y=140)
-    rb22.place(x=5, y=180)
-    rb23.place(x=45, y=180)
-    rb24.place(x=85, y=180)
-    rb25.place(x=125, y=180)
-    rb26.place(x=165, y=180)
-    rb27.place(x=205, y=180)
-    rb28.place(x=245, y=180)
-    rb29.place(x=5, y=220)
-    rb30.place(x=45, y=220)
+    #mesEscogido.place(x=300,y=50)
+    mes.place(x=175,y=50)
+    rb1.place(x=85, y=100)
+    rb2.place(x=125, y=100)
+    rb3.place(x=165, y=100)
+    rb4.place(x=205, y=100)
+    rb5.place(x=245, y=100)
+    rb6.place(x=285, y=100)
+    rb7.place(x=325, y=100)
+    rb8.place(x=85, y=140)
+    rb9.place(x=125, y=140)
+    rb10.place(x=165, y=140)
+    rb11.place(x=205, y=140)
+    rb12.place(x=245, y=140)
+    rb13.place(x=285, y=140)
+    rb14.place(x=325, y=140)
+    rb15.place(x=85, y=180)
+    rb16.place(x=125, y=180)
+    rb17.place(x=165, y=180)
+    rb18.place(x=205, y=180)
+    rb19.place(x=245, y=180)
+    rb20.place(x=285, y=180)
+    rb21.place(x=325, y=180)
+    rb22.place(x=85, y=220)
+    rb23.place(x=125, y=220)
+    rb24.place(x=165, y=220)
+    rb25.place(x=205, y=220)
+    rb26.place(x=245, y=220)
+    rb27.place(x=285, y=220)
+    rb28.place(x=325, y=220)
+    rb29.place(x=85, y=260)
+    rb30.place(x=125, y=260)
+    rb31.place(x=165,y=260)
                         
     solicitarBoton['bg'] = 'AliceBlue'
     def cita():
@@ -402,10 +407,9 @@ def solicitarCita():
             if k[0] == False:
                     horarios.append(k[1])
         horarioCitas.config(values=horarios)
-        horarioCitas.place(x=300,y=320)
+        horarioCitas.place(x=470,y=180)
         solicitarBoton.config(text="Solicitar cita")
-        solicitarBoton.place(x=450, y=317)
-        solicitarBoton['bg'] = 'AliceBlue'
+        solicitarBoton.place(x=630, y=177)
         solicitarBoton['fg'] = 'BlueViolet'
     def numero1():
         global dia
@@ -557,6 +561,11 @@ def solicitarCita():
         dia = 30
         MenuInicio.after(500, cita())
 
+    def numero31():
+        global dia
+        dia = 31
+        MenuInicio.after(500, cita())
+
     def procesoCita():
         for k in citasMensuales[dia]:
             if k[1] == horarioCitas.get():
@@ -607,7 +616,9 @@ def solicitarCita():
         rb28.place_forget()
         rb29.place_forget()
         rb30.place_forget()
+        rb31.place_forget()
         calendario.place_forget()
+        mes.place_forget()
         volverSolicitudCitas.place_forget()
         horarioCitas.place_forget()
         hayCitas.place_forget()
@@ -649,6 +660,7 @@ def solicitarCita():
     rb28.config(command=numero28, width = 4, height = 2)
     rb29.config(command=numero29, width = 4, height = 2)
     rb30.config(command=numero30, width = 4, height = 2)
+    rb31.config(command=numero31, width = 4, height = 2)
 
     solicitarBoton.config(command=procesoCita)
     volverSolicitudCitas.config(command=volver)
@@ -665,13 +677,13 @@ def consultarCita():
     TerminarCerrarSecion.place_forget()
 
     mensaje1.place(x=300,y=185)
-    hayCitas.place(x=95,y=300)
-    diaCita.place(x=425,y=300) ##
-    doctorCitas.place(x=445,y=300)
-    nombreDoctor.place(x=550,y=300)##
-    horario1.place(x=95,y=335)
-    horario2.place(x=135,y=335)##
-    NohayCitas.place(x=195,y=300)
+    hayCitas.place(x=95,y=400)
+    diaCita.place(x=425,y=15) ##
+    doctorCitas.place(x=445,y=400)
+    nombreDoctor.place(x=550,y=400)##
+    horario1.place(x=95,y=435)
+    horario2.place(x=135,y=435)##
+    NohayCitas.place(x=195,y=400)
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
@@ -803,13 +815,9 @@ def inicioDeSesion():
                     errorInicio.place_forget()
 
                     comprobador = True
-
                     
                     titulo3.place(x=301,y=105)
                     titulo4.place(x=327,y=200)
-
-
-                    
 
                     solicitudCita.config(command=solicitarCita)
                     solicitudCita.place(x=120,y=325)
