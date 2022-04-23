@@ -26,56 +26,56 @@ MenuInicio['bg'] = 'AliceBlue'
 
 #widgets menuPrincipal
 errorInicio=Label(MenuInicio)
-bienvenida = Label(MenuInicio,text="Bienvenido al inicio de sesión del hospital",font=("Times",16), justify=CENTER)
-aviso = Label(MenuInicio,text="Por favor ingresar la información",font=("Times",14), justify=CENTER)
-ingresoCedula = Label(MenuInicio,text="Identificación",font=("Times",14))
+bienvenida = Label(MenuInicio,text="Bienvenido al inicio de sesión del hospital",font=("Times",16), justify=CENTER, bg="AliceBlue")
+aviso = Label(MenuInicio,text="Por favor ingresar la información",font=("Times",14), justify=CENTER, bg="AliceBlue")
+ingresoCedula = Label(MenuInicio,text="Identificación",font=("Times",14), bg="AliceBlue")
 cedula=Entry(MenuInicio)
-ingresoContrasenia = Label(MenuInicio,text="Contraseña",font=("Times",14))
+ingresoContrasenia = Label(MenuInicio,text="Contraseña",font=("Times",14), bg="AliceBlue")
 contrasenia=Entry(MenuInicio,show="•")
 boton=Button(MenuInicio,text="Iniciar sesión", height = 3, width = 13)
 
 #widgets MenuDoctores
-titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER)
-titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER)
+titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Times",18), justify=CENTER, bg="AliceBlue")
+titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Times",12), justify=CENTER, bg="AliceBlue")
     #widget crearExpediente
-informacion=Label(MenuInicio,text="INFORMACION DEL NUEVO PACIENTE",font=("Arial",16,"bold","italic"), justify=CENTER)
-ingresoCedulaNuevo = Label(MenuInicio,text="Ingrese el número de cédula del paciente del que se va a crear el expediente",font=(14))
+informacion=Label(MenuInicio,text="INFORMACION DEL NUEVO PACIENTE",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
+ingresoCedulaNuevo = Label(MenuInicio,text="Ingrese el número de cédula del paciente del que se va a crear el expediente",font=(14), bg="AliceBlue")
 nuevaCedula=Entry(MenuInicio)
-ingresoNombreNuevo = Label(MenuInicio,text="Ingrese el nombre completo del paciente",font=(14))
+ingresoNombreNuevo = Label(MenuInicio,text="Ingrese el nombre completo del paciente",font=(14), bg="AliceBlue")
 nuevoNombre=Entry(MenuInicio)
-ingresoEdad = Label(MenuInicio,text="Ingrese la edad del paciente",font=(14))
+ingresoEdad = Label(MenuInicio,text="Ingrese la edad del paciente",font=(14), bg="AliceBlue")
 nuevaEdad=Entry(MenuInicio)
         #widget registrar
-registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER)
+registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
 botonCrear=Button(MenuInicio,text="Crear expediente") 
     #widget Volver
 volverMenuRegistrar=Button(MenuInicio,text="Volver al Menu de doctores")
     #widget consultarExpediente
-registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"),justify=CENTER)
-ingresoCedulaConsulta = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14))
+registro=Label(MenuInicio,text="Registro de expedientes",font=("Times",16,"bold","italic"),justify=CENTER, bg="AliceBlue")
+ingresoCedulaConsulta = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14), bg="AliceBlue")
 cedulaConsulta=Entry(MenuInicio)
-expediente=Label(MenuInicio,text="Expediente del paciente",font=("Arial",16,"bold","italic"), justify=CENTER)
-noCedula = Label(MenuInicio,text="Numero de cédula")
-salidaCedula = Label(MenuInicio)
-nombrePaciente=Label(MenuInicio, text="Nombre")
-salidaNombre=Label(MenuInicio)
-edadPaciente=Label(MenuInicio, text="Edad")
-salidaEdad=Label(MenuInicio)
-alturaPaciente=Label(MenuInicio, text="Altura")
-salidaAltura=Label(MenuInicio)
-pesoPaciente=Label(MenuInicio, text="Peso")
-salidaPeso=Label(MenuInicio)
-padecimientoPaciente=Label(MenuInicio, text="Padecimiento")
-salidaPadecimiento=Label(MenuInicio)
-recetaPaciente=Label(MenuInicio, text="Receta")
-salidaReceta=Label(MenuInicio)
-padecimientolbl = Label(MenuInicio)
+expediente=Label(MenuInicio,text="Expediente del paciente",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
+noCedula = Label(MenuInicio,text="Numero de cédula", bg="AliceBlue")
+salidaCedula = Label(MenuInicio, bg="AliceBlue")
+nombrePaciente=Label(MenuInicio, text="Nombre", bg="AliceBlue")
+salidaNombre=Label(MenuInicio, bg="AliceBlue")
+edadPaciente=Label(MenuInicio, text="Edad", bg="AliceBlue")
+salidaEdad=Label(MenuInicio, bg="AliceBlue")
+alturaPaciente=Label(MenuInicio, text="Altura", bg="AliceBlue")
+salidaAltura=Label(MenuInicio, bg="AliceBlue")
+pesoPaciente=Label(MenuInicio, text="Peso", bg="AliceBlue")
+salidaPeso=Label(MenuInicio, bg="AliceBlue")
+padecimientoPaciente=Label(MenuInicio, text="Padecimiento", bg="AliceBlue")
+salidaPadecimiento=Label(MenuInicio, bg="AliceBlue")
+recetaPaciente=Label(MenuInicio, text="Receta", bg="AliceBlue")
+salidaReceta=Label(MenuInicio, bg="AliceBlue")
+padecimientolbl = Label(MenuInicio, bg="AliceBlue")
 agregarPadecimiento = Entry(MenuInicio)
-recetalbl = Label(MenuInicio)
+recetalbl = Label(MenuInicio, bg="AliceBlue")
 agregarReceta=Entry(MenuInicio)
-alturalbl = Label(MenuInicio)
+alturalbl = Label(MenuInicio, bg="AliceBlue")
 agregarAltura=Entry(MenuInicio)
-pesolbl=Label(MenuInicio)
+pesolbl=Label(MenuInicio, bg="AliceBlue")
 agregarPeso=Entry(MenuInicio)
 modificarEx=Button(MenuInicio,text="Modificar expediente")
 botonConsulta=Button(MenuInicio,text="Buscar expediente") 
@@ -86,23 +86,23 @@ botonCrear=Button(MenuInicio,text="Crear un expediente")
 botonConsultar=Button(MenuInicio,text="Consultar un expediente")
 terminarSesion=Button(MenuInicio,text="Cerrar sesión")
 #widgets MenuPacientes
-titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Arial Bold",16), justify=CENTER)
-titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER)
+titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Times",16), justify=CENTER, bg="AliceBlue")
+titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Times",12), justify=CENTER, bg="AliceBlue")
 solicitudCita=Button(MenuInicio,text="Solicitar una cita")
 consultaCita=Button(MenuInicio,text="Consultar sobre una cita")
 consultaReceta=Button(MenuInicio,text="Consultar sobre una receta")
 TerminarCerrarSecion=Button(MenuInicio,text="Cerrar sesión")
     #widgets solicitarCita
-hayCitas=Label(MenuInicio)
-diaCita = Label(MenuInicio)
-doctorCitas = Label(MenuInicio)
-nombreDoctor = Label(MenuInicio)
-horario1 = Label(MenuInicio)
-horario2 = Label(MenuInicio)
+hayCitas=Label(MenuInicio, bg="AliceBlue")
+diaCita = Label(MenuInicio, bg="AliceBlue")
+doctorCitas = Label(MenuInicio, bg="AliceBlue")
+nombreDoctor = Label(MenuInicio, bg="AliceBlue")
+horario1 = Label(MenuInicio, bg="AliceBlue")
+horario2 = Label(MenuInicio, bg="AliceBlue")
 horarioCitas = Combobox(state="readonly")
-calendario=Label(MenuInicio,text="Calendario",font=("Arial",16))
-mes = Label(MenuInicio, text="Mayo", font=("Times",16))
-mesEscogido:Combobox(state="readonly")
+calendario=Label(MenuInicio,text="Calendario",font=("Arial",16),fg="RoyalBlue", bg="AliceBlue")
+mes = Label(MenuInicio, text="Mayo", font=("Times",16), bg="AliceBlue")
+mesEscogido = Combobox(state="readonly")
 rb1=Button(MenuInicio,text="1")
 rb2=Button(MenuInicio, text="2")
 rb3=Button(MenuInicio, text="3")
@@ -137,20 +137,20 @@ rb31=Button(MenuInicio,text="31")
 solicitarBoton=Button(MenuInicio)
 volverSolicitudCitas=Button(MenuInicio,text="Volver al menu de pacientes")
     #widgets consultarCitas
-mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER)
-hayCitas = Label(MenuInicio)
-diaCita = Label(MenuInicio)
-doctorCitas = Label(MenuInicio)
-nombreDoctor = Label(MenuInicio)
-horario1 = Label(MenuInicio)
-horario2 = Label(MenuInicio)
-NohayCitas = Label(MenuInicio)
+mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Times",16), justify=CENTER, bg="AliceBlue")
+hayCitas = Label(MenuInicio, bg="AliceBlue")
+diaCita = Label(MenuInicio, bg="AliceBlue")
+doctorCitas = Label(MenuInicio, bg="AliceBlue")
+nombreDoctor = Label(MenuInicio, bg="AliceBlue")
+horario1 = Label(MenuInicio, bg="AliceBlue")
+horario2 = Label(MenuInicio, bg="AliceBlue")
+NohayCitas = Label(MenuInicio, bg="AliceBlue")
 volverConsultarCitas=Button(MenuInicio,text="Volver al menu de pacientes")
     #widgets consultarReceta
-mensaje1=Label(MenuInicio)
-hayReceta=Label(MenuInicio)
-receta=Label(MenuInicio)
-NohayRecetas=Label(MenuInicio)
+mensaje1=Label(MenuInicio, bg="AliceBlue")
+hayReceta=Label(MenuInicio, bg="AliceBlue")
+receta=Label(MenuInicio, bg="AliceBlue")
+NohayRecetas=Label(MenuInicio, bg="AliceBlue")
 volverConsultarRecetas=Button(MenuInicio,text="Volver al menu de pacientes")
 
 #Menu Doctores
@@ -169,8 +169,6 @@ def crearExpedientes():
         ingresoEdad.place(x=5,y=220)
         nuevaEdad.place(x=215,y=224)
 
-                        
-                        
         def registrar():
             global registroInformacion
             registroInformacion.place(x=260,y=310)
@@ -183,8 +181,8 @@ def crearExpedientes():
             expedientesPacientes.append([cedula, nombreCompleto, edad])
         botonCrear.config(command=registrar)
         botonCrear.place(x=20,y=270)
-        botonCrear['bg'] = 'AliceBlue'
-        botonCrear['fg'] = 'SaddleBrown'
+        botonCrear['bg'] = 'LightCyan'
+        botonCrear['fg'] = 'maroon'
 
         def volver():
             informacion.place_forget()
@@ -199,7 +197,7 @@ def crearExpedientes():
             volverMenuRegistrar.place_forget()
             inicioDeSesion()
         volverMenuRegistrar.config(command=volver)
-        volverMenuRegistrar.place(x=634,y=510)
+        volverMenuRegistrar.place(x=635,y=550)
         volverMenuRegistrar['bg'] = 'azure'
 
 def consultarExpediente():
@@ -233,7 +231,8 @@ def consultarExpediente():
         alturalbl.place(x=550, y=200)
         pesolbl.place(x=5,y=240)
         modificarEx['bg'] = 'AliceBlue'
-        modificarEx['fg'] = 'BlueViolet'
+        modificarEx['fg'] = 'SaddleBrown'
+
         def busqueda():
             global posicionExpediente
             cedula = int(cedulaConsulta.get())
@@ -268,7 +267,7 @@ def consultarExpediente():
                         agregarAltura.place(x=640,y=200)
                         pesolbl.config(text="Agregar peso")
                         agregarPeso.place(x=90,y=240)
-                        modificarEx.place(x=600,y=400)
+                        modificarEx.place(x=635,y=400)
 
         def modficarExpediente():
             if str(agregarAltura.get()) != "":
@@ -302,9 +301,8 @@ def consultarExpediente():
         botonConsulta.config(command = busqueda)                        
         botonConsulta.place(x=20,y=160)
         botonConsulta['bg'] = 'AliceBlue'
-        botonConsulta['fg'] = 'BlueViolet'
+        botonConsulta['fg'] = 'SaddleBrown'
         modificarEx.config(command=modficarExpediente)
-                        
                         
         def volver():
             noCedula.place_forget()
@@ -338,7 +336,7 @@ def consultarExpediente():
             volverMenuConsulta.place_forget()
             inicioDeSesion()
         volverMenuConsulta.config(command=volver)
-        volverMenuConsulta.place(x=634,y=510)
+        volverMenuConsulta.place(x=635,y=550)
         volverMenuConsulta['bg'] = 'azure'
 
                         
@@ -360,8 +358,8 @@ def solicitarCita():
     TerminarCerrarSecion.place_forget()
 
     hayCitas.place(x=85,y=355)
-    diaCita.place(x=340,y=355) ##
-    doctorCitas.place(x=360,y=355)
+    diaCita.place(x=305,y=355) ##
+    doctorCitas.place(x=330,y=355)
     nombreDoctor.place(x=85,y=375)##
     horario1.place(x=228,y=375)
     horario2.place(x=265,y=375)
@@ -410,7 +408,7 @@ def solicitarCita():
         horarioCitas.place(x=470,y=180)
         solicitarBoton.config(text="Solicitar cita")
         solicitarBoton.place(x=630, y=177)
-        solicitarBoton['fg'] = 'BlueViolet'
+        solicitarBoton['fg'] = 'SaddleBrown'
     def numero1():
         global dia
         dia = 1
@@ -576,12 +574,12 @@ def solicitarCita():
                         nombrePaciente = i[1]
                 k[3]=nombrePaciente
 
-                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Arial",12), justify=CENTER)
-                diaCita.config(text=str(dia),font=("Arial",12), justify=CENTER)##
-                doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER)
-                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
-                horario1.config(text="a las ",font=("Arial",12), justify=CENTER)
-                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Times",12), justify=CENTER)
+                diaCita.config(text=str(dia),font=("Times",12), justify=CENTER)##
+                doctorCitas.config(text="con el doctor/a",font=("Times",12), justify=CENTER)
+                nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER)##
+                horario1.config(text="a las ",font=("Times",12), justify=CENTER)
+                horario2.config(text=k[1],font=("Times",12), justify=CENTER)##
                 break
                             
                             
@@ -664,7 +662,7 @@ def solicitarCita():
 
     solicitarBoton.config(command=procesoCita)
     volverSolicitudCitas.config(command=volver)
-    volverSolicitudCitas.place(x=617,y=547)
+    volverSolicitudCitas.place(x=635,y=550)
     volverSolicitudCitas['bg'] = 'azure'
 
 
@@ -691,15 +689,15 @@ def consultarCita():
     for i in citasMensuales.keys():
         for k in citasMensuales[i]:
             if nombrePaciente in k:
-                hayCitas.config(text="Segun nuestros registros usted tiene cita el dia ",font=("Arial",12), justify=CENTER)
-                diaCita.config(text=str(i),font=("Arial",12), justify=CENTER)##
-                doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER)
-                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
-                horario1.config(text="a las ",font=("Arial",12), justify=CENTER)
-                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                hayCitas.config(text="Segun nuestros registros usted tiene cita el dia ",font=("Times",12), justify=CENTER)
+                diaCita.config(text=str(i),font=("Times",12), justify=CENTER)##
+                doctorCitas.config(text="con el doctor/a",font=("Times",12), justify=CENTER)
+                nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER)##
+                horario1.config(text="a las ",font=("Times",12), justify=CENTER)
+                horario2.config(text=k[1],font=("Times",12), justify=CENTER)##
                 NohayCitas.place_forget()    
             else:
-                NohayCitas.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
+                NohayCitas.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Times",12), justify=CENTER)
                                     
 
     def volver():
@@ -715,7 +713,7 @@ def consultarCita():
         inicioDeSesion()
 
     volverConsultarCitas.config(command=volver)
-    volverConsultarCitas.place(x=617,y=547)
+    volverConsultarCitas.place(x=635,y=550)
     volverConsultarCitas['bg'] = 'azure'
 
 
@@ -727,7 +725,7 @@ def consultarReceta():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
 
-    mensaje1.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
+    mensaje1.config(text="Consulta de Recetas",font=("Times",16), justify=CENTER)
     mensaje1.place(x=300,y=185)
                         
     hayReceta.place(x=205,y=300)
@@ -739,10 +737,10 @@ def consultarReceta():
                 if cedulaLogIn in i:
                     try:
                         if i[6] != "":
-                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Arial",12), justify=CENTER)
+                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Times",12), justify=CENTER)
                         receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
                     except:
-                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
+                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Times",12), justify=CENTER)
 
     def volver():
         mensaje1.place_forget()
@@ -752,7 +750,7 @@ def consultarReceta():
         NohayRecetas.place_forget()
         inicioDeSesion()
     volverConsultarRecetas.config(command=volver)
-    volverConsultarRecetas.place(x=617,y=547)
+    volverConsultarRecetas.place(x=635,y=550)
     volverConsultarRecetas['bg'] = 'azure'
                         
                         
@@ -790,16 +788,15 @@ def inicioDeSesion():
                 botonCrear.config(command = crearExpedientes)                
                 botonCrear.place(x=150,y=325)
                 botonCrear['bg'] = 'AliceBlue'
-                botonCrear['fg'] = 'BlueViolet'
+                botonCrear['fg'] = 'SaddleBrown'
                 botonConsultar.config(command = consultarExpediente)                
                 botonConsultar.place(x=520,y=325)
                 botonConsultar['bg'] = 'AliceBlue'
-                botonConsultar['fg'] = 'BlueViolet'
+                botonConsultar['fg'] = 'SaddleBrown'
                 terminarSesion.config(command = cerrarSesionDoctores)                
                 terminarSesion.place(x=687,y=547)
                 terminarSesion['bg'] = 'azure'
 
-           
         else:
             #Inicio sesion pacientes
             for i in range(len(credencialesPacientes)):
@@ -822,20 +819,19 @@ def inicioDeSesion():
                     solicitudCita.config(command=solicitarCita)
                     solicitudCita.place(x=120,y=325)
                     solicitudCita['bg'] = 'AliceBlue'
-                    solicitudCita['fg'] = 'BlueViolet'
+                    solicitudCita['fg'] = 'SaddleBrown'
                     consultaCita.config(command=consultarCita)
                     consultaCita.place(x=320,y=325)
                     consultaCita['bg'] = 'AliceBlue'
-                    consultaCita['fg'] = 'BlueViolet'
+                    consultaCita['fg'] = 'SaddleBrown'
                     consultaReceta.config(command=consultarReceta)
                     consultaReceta.place(x=520,y=325)
                     consultaReceta['bg'] = 'AliceBlue'
-                    consultaReceta['fg'] = 'BlueViolet'
+                    consultaReceta['fg'] = 'SaddleBrown'
                     TerminarCerrarSecion.config(command=cerrarSesionPacientes)
                     TerminarCerrarSecion.place(x=687,y=547)
                     TerminarCerrarSecion['bg'] = 'azure'
                 
-
         if comprobador == False:
             intentos = intentos - 1
             if intentos > 0:
