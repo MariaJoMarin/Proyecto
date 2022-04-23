@@ -17,7 +17,6 @@ for i in range(0,31):
         randList.append(a)
     citasMensuales[i+1] = [[False,"7:00 am",credencialesDoctores[randList[0]][1],"Paciente"],[False,"8:00 am",credencialesDoctores[randList[1]][1],"Paciente"],[False,"9:00 am",credencialesDoctores[randList[2]][1],"Paciente"],[False,"10:00 am",credencialesDoctores[randList[3]][1],"Paciente"],[False,"11:00 am",credencialesDoctores[randList[4]][1],"Paciente"],[False,"12:00 pm",credencialesDoctores[randList[5]][1],"Paciente"],[False,"1:00 pm",credencialesDoctores[randList[6]][1],"Paciente"],[False,"2:00 pm",credencialesDoctores[randList[7]][1],"Paciente"],[False,"3:00 pm",credencialesDoctores[randList[8]][1],"Paciente"],[False,"4:00 pm",credencialesDoctores[randList[9]][1],"Paciente"]]
 
-
 MenuInicio=Tk()
 MenuInicio.title("Menu de Inicio")
 MenuInicio.geometry("800x600")
@@ -35,26 +34,26 @@ contrasenia=Entry(MenuInicio,show="•")
 boton=Button(MenuInicio,text="Iniciar sesión", height = 3, width = 13)
 
 #widgets MenuDoctores
-titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Times",18), justify=CENTER, bg="AliceBlue")
-titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Times",12), justify=CENTER, bg="AliceBlue")
-    #widget crearExpediente
-informacion=Label(MenuInicio,text="INFORMACION DEL NUEVO PACIENTE",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
+titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER, bg="AliceBlue")
+titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER, bg="AliceBlue")
+#widget crearExpediente
+informacion=Label(MenuInicio,text="INFORMACION DEL NUEVO PACIENTE",font=("Arial",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
 ingresoCedulaNuevo = Label(MenuInicio,text="Ingrese el número de cédula del paciente del que se va a crear el expediente",font=(14), bg="AliceBlue")
 nuevaCedula=Entry(MenuInicio)
 ingresoNombreNuevo = Label(MenuInicio,text="Ingrese el nombre completo del paciente",font=(14), bg="AliceBlue")
 nuevoNombre=Entry(MenuInicio)
 ingresoEdad = Label(MenuInicio,text="Ingrese la edad del paciente",font=(14), bg="AliceBlue")
 nuevaEdad=Entry(MenuInicio)
-        #widget registrar
-registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
+#widget registrar
+registroInformacion=Label(MenuInicio,text="Información resgristrada",font=("Arial",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
 botonCrear=Button(MenuInicio,text="Crear expediente") 
-    #widget Volver
+#widget Volver
 volverMenuRegistrar=Button(MenuInicio,text="Volver al Menu de doctores")
-    #widget consultarExpediente
-registro=Label(MenuInicio,text="Registro de expedientes",font=("Times",16,"bold","italic"),justify=CENTER, bg="AliceBlue")
+#widget consultarExpediente
+registro=Label(MenuInicio,text="Registro de expedientes",font=("Arial",16,"bold","italic"),justify=CENTER, bg="AliceBlue")
 ingresoCedulaConsulta = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=(14), bg="AliceBlue")
 cedulaConsulta=Entry(MenuInicio)
-expediente=Label(MenuInicio,text="Expediente del paciente",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
+expediente=Label(MenuInicio,text="Expediente del paciente",font=("Arial",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
 noCedula = Label(MenuInicio,text="Numero de cédula", bg="AliceBlue")
 salidaCedula = Label(MenuInicio, bg="AliceBlue")
 nombrePaciente=Label(MenuInicio, text="Nombre", bg="AliceBlue")
@@ -79,20 +78,20 @@ pesolbl=Label(MenuInicio, bg="AliceBlue")
 agregarPeso=Entry(MenuInicio)
 modificarEx=Button(MenuInicio,text="Modificar expediente")
 botonConsulta=Button(MenuInicio,text="Buscar expediente") 
-    #widget Volver
+#widget Volver
 volverMenuConsulta=Button(MenuInicio,text="Volver al Menu de doctores")
-    #Widget Boton Crear & Consultar & Cerrar
+#Widget Boton Crear & Consultar & Cerrar
 botonCrear=Button(MenuInicio,text="Crear un expediente")
 botonConsultar=Button(MenuInicio,text="Consultar un expediente")
 terminarSesion=Button(MenuInicio,text="Cerrar sesión")
 #widgets MenuPacientes
-titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Times",16), justify=CENTER, bg="AliceBlue")
-titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Times",12), justify=CENTER, bg="AliceBlue")
+titulo3=Label(MenuInicio,text="Bienvenido Paciente",font=("Arial Bold",16), justify=CENTER, bg="AliceBlue")
+titulo4=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER, bg="AliceBlue")
 solicitudCita=Button(MenuInicio,text="Solicitar una cita")
 consultaCita=Button(MenuInicio,text="Consultar sobre una cita")
 consultaReceta=Button(MenuInicio,text="Consultar sobre una receta")
 TerminarCerrarSecion=Button(MenuInicio,text="Cerrar sesión")
-    #widgets solicitarCita
+#widgets solicitarCita
 hayCitas=Label(MenuInicio, bg="AliceBlue")
 diaCita = Label(MenuInicio, bg="AliceBlue")
 doctorCitas = Label(MenuInicio, bg="AliceBlue")
@@ -101,8 +100,8 @@ horario1 = Label(MenuInicio, bg="AliceBlue")
 horario2 = Label(MenuInicio, bg="AliceBlue")
 horarioCitas = Combobox(state="readonly")
 calendario=Label(MenuInicio,text="Calendario",font=("Arial",16),fg="RoyalBlue", bg="AliceBlue")
-mes = Label(MenuInicio, text="Mayo", font=("Times",16), bg="AliceBlue")
-mesEscogido = Combobox(state="readonly")
+meses =("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+mesEscogido=Combobox(MenuInicio, state="readonly", values=meses)
 rb1=Button(MenuInicio,text="1")
 rb2=Button(MenuInicio, text="2")
 rb3=Button(MenuInicio, text="3")
@@ -134,10 +133,11 @@ rb28=Button(MenuInicio, text="28")
 rb29=Button(MenuInicio, text="29")
 rb30=Button(MenuInicio, text="30")
 rb31=Button(MenuInicio,text="31")
+escogerMes = Button(MenuInicio, text="Escoger mes")
 solicitarBoton=Button(MenuInicio)
 volverSolicitudCitas=Button(MenuInicio,text="Volver al menu de pacientes")
-    #widgets consultarCitas
-mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Times",16), justify=CENTER, bg="AliceBlue")
+#widgets consultarCitas
+mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER, bg="AliceBlue")
 hayCitas = Label(MenuInicio, bg="AliceBlue")
 diaCita = Label(MenuInicio, bg="AliceBlue")
 doctorCitas = Label(MenuInicio, bg="AliceBlue")
@@ -146,7 +146,10 @@ horario1 = Label(MenuInicio, bg="AliceBlue")
 horario2 = Label(MenuInicio, bg="AliceBlue")
 NohayCitas = Label(MenuInicio, bg="AliceBlue")
 volverConsultarCitas=Button(MenuInicio,text="Volver al menu de pacientes")
-    #widgets consultarReceta
+mes = " "
+citaEliminar = Button(MenuInicio, text = "Eliminar Cita")
+citaModificar = Button(MenuInicio, text="Modificar Cita")
+#widgets consultarReceta
 mensaje1=Label(MenuInicio, bg="AliceBlue")
 hayReceta=Label(MenuInicio, bg="AliceBlue")
 receta=Label(MenuInicio, bg="AliceBlue")
@@ -169,6 +172,8 @@ def crearExpedientes():
         ingresoEdad.place(x=5,y=220)
         nuevaEdad.place(x=215,y=224)
 
+                        
+                        
         def registrar():
             global registroInformacion
             registroInformacion.place(x=260,y=310)
@@ -181,8 +186,8 @@ def crearExpedientes():
             expedientesPacientes.append([cedula, nombreCompleto, edad])
         botonCrear.config(command=registrar)
         botonCrear.place(x=20,y=270)
-        botonCrear['bg'] = 'LightCyan'
-        botonCrear['fg'] = 'maroon'
+        botonCrear['bg'] = 'AliceBlue'
+        botonCrear['fg'] = 'SaddleBrown'
 
         def volver():
             informacion.place_forget()
@@ -197,7 +202,7 @@ def crearExpedientes():
             volverMenuRegistrar.place_forget()
             inicioDeSesion()
         volverMenuRegistrar.config(command=volver)
-        volverMenuRegistrar.place(x=635,y=550)
+        volverMenuRegistrar.place(x=634,y=510)
         volverMenuRegistrar['bg'] = 'azure'
 
 def consultarExpediente():
@@ -231,8 +236,7 @@ def consultarExpediente():
         alturalbl.place(x=550, y=200)
         pesolbl.place(x=5,y=240)
         modificarEx['bg'] = 'AliceBlue'
-        modificarEx['fg'] = 'SaddleBrown'
-
+        modificarEx['fg'] = 'BlueViolet'
         def busqueda():
             global posicionExpediente
             cedula = int(cedulaConsulta.get())
@@ -267,7 +271,7 @@ def consultarExpediente():
                         agregarAltura.place(x=640,y=200)
                         pesolbl.config(text="Agregar peso")
                         agregarPeso.place(x=90,y=240)
-                        modificarEx.place(x=635,y=400)
+                        modificarEx.place(x=600,y=400)
 
         def modficarExpediente():
             if str(agregarAltura.get()) != "":
@@ -301,8 +305,9 @@ def consultarExpediente():
         botonConsulta.config(command = busqueda)                        
         botonConsulta.place(x=20,y=160)
         botonConsulta['bg'] = 'AliceBlue'
-        botonConsulta['fg'] = 'SaddleBrown'
+        botonConsulta['fg'] = 'BlueViolet'
         modificarEx.config(command=modficarExpediente)
+                        
                         
         def volver():
             noCedula.place_forget()
@@ -336,7 +341,7 @@ def consultarExpediente():
             volverMenuConsulta.place_forget()
             inicioDeSesion()
         volverMenuConsulta.config(command=volver)
-        volverMenuConsulta.place(x=635,y=550)
+        volverMenuConsulta.place(x=634,y=510)
         volverMenuConsulta['bg'] = 'azure'
 
                         
@@ -358,46 +363,113 @@ def solicitarCita():
     TerminarCerrarSecion.place_forget()
 
     hayCitas.place(x=85,y=355)
-    diaCita.place(x=305,y=355) ##
-    doctorCitas.place(x=330,y=355)
+    diaCita.place(x=340,y=355) ##
+    doctorCitas.place(x=360,y=355)
     nombreDoctor.place(x=85,y=375)##
     horario1.place(x=228,y=375)
     horario2.place(x=265,y=375)
     calendario.place(x=350,y=20)
-    #mesEscogido.place(x=300,y=50)
-    mes.place(x=175,y=50)
-    rb1.place(x=85, y=100)
-    rb2.place(x=125, y=100)
-    rb3.place(x=165, y=100)
-    rb4.place(x=205, y=100)
-    rb5.place(x=245, y=100)
-    rb6.place(x=285, y=100)
-    rb7.place(x=325, y=100)
-    rb8.place(x=85, y=140)
-    rb9.place(x=125, y=140)
-    rb10.place(x=165, y=140)
-    rb11.place(x=205, y=140)
-    rb12.place(x=245, y=140)
-    rb13.place(x=285, y=140)
-    rb14.place(x=325, y=140)
-    rb15.place(x=85, y=180)
-    rb16.place(x=125, y=180)
-    rb17.place(x=165, y=180)
-    rb18.place(x=205, y=180)
-    rb19.place(x=245, y=180)
-    rb20.place(x=285, y=180)
-    rb21.place(x=325, y=180)
-    rb22.place(x=85, y=220)
-    rb23.place(x=125, y=220)
-    rb24.place(x=165, y=220)
-    rb25.place(x=205, y=220)
-    rb26.place(x=245, y=220)
-    rb27.place(x=285, y=220)
-    rb28.place(x=325, y=220)
-    rb29.place(x=85, y=260)
-    rb30.place(x=125, y=260)
-    rb31.place(x=165,y=260)
-                        
+    mesEscogido.place(x=300,y=50)
+    escogerMes.place(x=350, y=50)
+    #mes.place(x=175,y=50)
+    
+    
+    def cambiarMes():
+        global mes
+        mes = mesEscogido.get()
+        if mesEscogido.get() == "Abril" or mesEscogido.get() == "Junio" or mesEscogido.get() == "Septiembre" or mesEscogido.get() == "Noviembre": 
+            rb1.place(x=85, y=100)
+            rb2.place(x=125, y=100)
+            rb3.place(x=165, y=100)
+            rb4.place(x=205, y=100)
+            rb5.place(x=245, y=100)
+            rb6.place(x=285, y=100)
+            rb7.place(x=325, y=100)
+            rb8.place(x=85, y=140)
+            rb9.place(x=125, y=140)
+            rb10.place(x=165, y=140)
+            rb11.place(x=205, y=140)
+            rb12.place(x=245, y=140)
+            rb13.place(x=285, y=140)
+            rb14.place(x=325, y=140)
+            rb15.place(x=85, y=180)
+            rb16.place(x=125, y=180)
+            rb17.place(x=165, y=180)
+            rb18.place(x=205, y=180)
+            rb19.place(x=245, y=180)
+            rb20.place(x=285, y=180)
+            rb21.place(x=325, y=180)
+            rb22.place(x=85, y=220)
+            rb23.place(x=125, y=220)
+            rb24.place(x=165, y=220)
+            rb25.place(x=205, y=220)
+            rb26.place(x=245, y=220)
+            rb27.place(x=285, y=220)
+            rb28.place(x=325, y=220)
+            rb29.place(x=85, y=260)
+            rb30.place(x=125, y=260)
+        elif mesEscogido.get() == "Febrero":
+            rb1.place(x=85, y=100)
+            rb2.place(x=125, y=100)
+            rb3.place(x=165, y=100)
+            rb4.place(x=205, y=100)
+            rb5.place(x=245, y=100)
+            rb6.place(x=285, y=100)
+            rb7.place(x=325, y=100)
+            rb8.place(x=85, y=140)
+            rb9.place(x=125, y=140)
+            rb10.place(x=165, y=140)
+            rb11.place(x=205, y=140)
+            rb12.place(x=245, y=140)
+            rb13.place(x=285, y=140)
+            rb14.place(x=325, y=140)
+            rb15.place(x=85, y=180)
+            rb16.place(x=125, y=180)
+            rb17.place(x=165, y=180)
+            rb18.place(x=205, y=180)
+            rb19.place(x=245, y=180)
+            rb20.place(x=285, y=180)
+            rb21.place(x=325, y=180)
+            rb22.place(x=85, y=220)
+            rb23.place(x=125, y=220)
+            rb24.place(x=165, y=220)
+            rb25.place(x=205, y=220)
+            rb26.place(x=245, y=220)
+            rb27.place(x=285, y=220)
+            rb28.place(x=325, y=220)
+        else:
+            rb1.place(x=85, y=100)
+            rb2.place(x=125, y=100)
+            rb3.place(x=165, y=100)
+            rb4.place(x=205, y=100)
+            rb5.place(x=245, y=100)
+            rb6.place(x=285, y=100)
+            rb7.place(x=325, y=100)
+            rb8.place(x=85, y=140)
+            rb9.place(x=125, y=140)
+            rb10.place(x=165, y=140)
+            rb11.place(x=205, y=140)
+            rb12.place(x=245, y=140)
+            rb13.place(x=285, y=140)
+            rb14.place(x=325, y=140)
+            rb15.place(x=85, y=180)
+            rb16.place(x=125, y=180)
+            rb17.place(x=165, y=180)
+            rb18.place(x=205, y=180)
+            rb19.place(x=245, y=180)
+            rb20.place(x=285, y=180)
+            rb21.place(x=325, y=180)
+            rb22.place(x=85, y=220)
+            rb23.place(x=125, y=220)
+            rb24.place(x=165, y=220)
+            rb25.place(x=205, y=220)
+            rb26.place(x=245, y=220)
+            rb27.place(x=285, y=220)
+            rb28.place(x=325, y=220)
+            rb29.place(x=85, y=260)
+            rb30.place(x=125, y=260)
+            rb31.place(x=165,y=260)
+    escogerMes.config(command=cambiarMes)                   
     solicitarBoton['bg'] = 'AliceBlue'
     def cita():
         horarios=[]
@@ -408,7 +480,7 @@ def solicitarCita():
         horarioCitas.place(x=470,y=180)
         solicitarBoton.config(text="Solicitar cita")
         solicitarBoton.place(x=630, y=177)
-        solicitarBoton['fg'] = 'SaddleBrown'
+        solicitarBoton['fg'] = 'BlueViolet'
     def numero1():
         global dia
         dia = 1
@@ -574,15 +646,14 @@ def solicitarCita():
                         nombrePaciente = i[1]
                 k[3]=nombrePaciente
 
-                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Times",12), justify=CENTER)
-                diaCita.config(text=str(dia),font=("Times",12), justify=CENTER)##
-                doctorCitas.config(text="con el doctor/a",font=("Times",12), justify=CENTER)
-                nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER)##
-                horario1.config(text="a las ",font=("Times",12), justify=CENTER)
-                horario2.config(text=k[1],font=("Times",12), justify=CENTER)##
+                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Arial",12), justify=CENTER)
+                diaCita.config(text=str(dia),font=("Arial",12), justify=CENTER)##
+                doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER)
+                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
+                horario1.config(text="a las ",font=("Arial",12), justify=CENTER)
+                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
                 break
-                            
-                            
+                                            
     def volver():
         rb1.place_forget()
         rb2.place_forget()
@@ -616,7 +687,8 @@ def solicitarCita():
         rb30.place_forget()
         rb31.place_forget()
         calendario.place_forget()
-        mes.place_forget()
+        escogerMes.place_forget()
+        mesEscogido.place_forget()
         volverSolicitudCitas.place_forget()
         horarioCitas.place_forget()
         hayCitas.place_forget()
@@ -662,7 +734,7 @@ def solicitarCita():
 
     solicitarBoton.config(command=procesoCita)
     volverSolicitudCitas.config(command=volver)
-    volverSolicitudCitas.place(x=635,y=550)
+    volverSolicitudCitas.place(x=617,y=547)
     volverSolicitudCitas['bg'] = 'azure'
 
 
@@ -676,12 +748,15 @@ def consultarCita():
 
     mensaje1.place(x=300,y=185)
     hayCitas.place(x=95,y=400)
-    diaCita.place(x=425,y=15) ##
+    diaCita.place(x=95,y=435) ##
     doctorCitas.place(x=445,y=400)
-    nombreDoctor.place(x=550,y=400)##
-    horario1.place(x=95,y=435)
-    horario2.place(x=135,y=435)##
-    NohayCitas.place(x=195,y=400)
+    nombreDoctor.place(x=445,y=450)##
+    horario1.place(x=500,y=400)
+    horario2.place(x=500,y=435)##
+    NohayCitas.place(x=195,y=435)
+    hayCitas.config(text="Fecha",font=("Arial",12), justify=CENTER)
+    doctorCitas.config(text="Doctor/a",font=("Arial",12), justify=CENTER)
+    horario1.config(text="Hora",font=("Arial",12), justify=CENTER)
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
@@ -689,17 +764,52 @@ def consultarCita():
     for i in citasMensuales.keys():
         for k in citasMensuales[i]:
             if nombrePaciente in k:
-                hayCitas.config(text="Segun nuestros registros usted tiene cita el dia ",font=("Times",12), justify=CENTER)
-                diaCita.config(text=str(i),font=("Times",12), justify=CENTER)##
-                doctorCitas.config(text="con el doctor/a",font=("Times",12), justify=CENTER)
-                nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER)##
-                horario1.config(text="a las ",font=("Times",12), justify=CENTER)
-                horario2.config(text=k[1],font=("Times",12), justify=CENTER)##
+                fecha=str(i)
+                fecha = fecha + " de " + mes
+                diaCita.config(text=fecha,font=("Arial",12), justify=CENTER)##
+                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
+                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                citaEliminar.place(x=225,y=500)
+                citaModificar.place(x=275, y = 500)
                 NohayCitas.place_forget()    
             else:
-                NohayCitas.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Times",12), justify=CENTER)
-                                    
-
+                NohayCitas.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
+    
+    def modificarCita():
+        for i in citasMensuales.keys():
+            for k in citasMensuales[i]:
+                if nombrePaciente in k:
+                    doctor=k[2]
+                    hora=k[1]
+                    k[0]=False
+                    k[3]="Paciente"
+        for i in citasMensuales.keys():
+            for k in citasMensuales[i]:
+                if doctor in k and k[0] == False and k[1]!=hora:
+                    k[0]=True
+                    fecha=str(i)
+                    fecha = fecha + " de " + mes
+                    diaCita.config(text=fecha,font=("Arial",12), justify=CENTER)##
+                    nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
+                    horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                    break
+                else:
+                    NohayCitas.config(text="El doctor no tiene más fechas disponibles")
+                    break
+            break
+    citaModificar.config(command=modificarCita)           
+                    
+    def eliminarCita():
+        for i in citasMensuales.keys():
+            for k in citasMensuales[i]:
+                if nombrePaciente in k:
+                    k[3]="Paciente"
+                    k[0]=False
+                    MenuInicio.after(50, consultarCita)
+                    diaCita.config(text=" ")
+                    horario2.config(text=" ")
+                    nombreDoctor.config(text=" ")
+    citaEliminar.config(command=eliminarCita)
     def volver():
         mensaje1.place_forget()
         hayCitas.place_forget()
@@ -713,9 +823,8 @@ def consultarCita():
         inicioDeSesion()
 
     volverConsultarCitas.config(command=volver)
-    volverConsultarCitas.place(x=635,y=550)
+    volverConsultarCitas.place(x=617,y=547)
     volverConsultarCitas['bg'] = 'azure'
-
 
 def consultarReceta():
     titulo3.place_forget()
@@ -725,22 +834,21 @@ def consultarReceta():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
 
-    mensaje1.config(text="Consulta de Recetas",font=("Times",16), justify=CENTER)
+    mensaje1.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
     mensaje1.place(x=300,y=185)
                         
     hayReceta.place(x=205,y=300)
     NohayRecetas.place(x=195,y=300)
     receta.place(x=570,y=300) ##
-                        
 
     for i in expedientesPacientes:
                 if cedulaLogIn in i:
                     try:
                         if i[6] != "":
-                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Times",12), justify=CENTER)
+                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Arial",12), justify=CENTER)
                         receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
                     except:
-                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Times",12), justify=CENTER)
+                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
 
     def volver():
         mensaje1.place_forget()
@@ -750,9 +858,8 @@ def consultarReceta():
         NohayRecetas.place_forget()
         inicioDeSesion()
     volverConsultarRecetas.config(command=volver)
-    volverConsultarRecetas.place(x=635,y=550)
+    volverConsultarRecetas.place(x=617,y=547)
     volverConsultarRecetas['bg'] = 'azure'
-                        
                         
 def cerrarSesionPacientes():
     titulo3.place_forget()
@@ -762,7 +869,6 @@ def cerrarSesionPacientes():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
     menuPrincipal()
-
 
 def inicioDeSesion():
         global intentos
@@ -788,11 +894,11 @@ def inicioDeSesion():
                 botonCrear.config(command = crearExpedientes)                
                 botonCrear.place(x=150,y=325)
                 botonCrear['bg'] = 'AliceBlue'
-                botonCrear['fg'] = 'SaddleBrown'
+                botonCrear['fg'] = 'BlueViolet'
                 botonConsultar.config(command = consultarExpediente)                
                 botonConsultar.place(x=520,y=325)
                 botonConsultar['bg'] = 'AliceBlue'
-                botonConsultar['fg'] = 'SaddleBrown'
+                botonConsultar['fg'] = 'BlueViolet'
                 terminarSesion.config(command = cerrarSesionDoctores)                
                 terminarSesion.place(x=687,y=547)
                 terminarSesion['bg'] = 'azure'
@@ -819,19 +925,19 @@ def inicioDeSesion():
                     solicitudCita.config(command=solicitarCita)
                     solicitudCita.place(x=120,y=325)
                     solicitudCita['bg'] = 'AliceBlue'
-                    solicitudCita['fg'] = 'SaddleBrown'
+                    solicitudCita['fg'] = 'BlueViolet'
                     consultaCita.config(command=consultarCita)
                     consultaCita.place(x=320,y=325)
                     consultaCita['bg'] = 'AliceBlue'
-                    consultaCita['fg'] = 'SaddleBrown'
+                    consultaCita['fg'] = 'BlueViolet'
                     consultaReceta.config(command=consultarReceta)
                     consultaReceta.place(x=520,y=325)
                     consultaReceta['bg'] = 'AliceBlue'
-                    consultaReceta['fg'] = 'SaddleBrown'
+                    consultaReceta['fg'] = 'BlueViolet'
                     TerminarCerrarSecion.config(command=cerrarSesionPacientes)
                     TerminarCerrarSecion.place(x=687,y=547)
                     TerminarCerrarSecion['bg'] = 'azure'
-                
+
         if comprobador == False:
             intentos = intentos - 1
             if intentos > 0:
