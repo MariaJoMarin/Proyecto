@@ -33,7 +33,19 @@ cedula=Entry(MenuInicio)
 ingresoContrasenia = Label(MenuInicio,text="Contraseña",font=("Times",14), bg="AliceBlue")
 contrasenia=Entry(MenuInicio,show="•")
 boton=Button(MenuInicio,text="Iniciar sesión", height = 3, width = 13)
-
+usuarioNuevo=Button(MenuInicio, text="Nueva cuenta para pacientes", height = 3, width = 23)
+#widgets NuevaCuenta
+TituloNuevaCuenta = Label(MenuInicio,text="Creación de nueva cuenta",font=("Arial Bold",16), justify=CENTER, bg="AliceBlue")
+CedulaCuentaNueva = Label(MenuInicio,text="Ingrese su número de cédula ",font=(14), bg="AliceBlue")
+CedulaNuevaCuentaENT=Entry(MenuInicio)
+NombreNuevacuenta = Label(MenuInicio,text="Ingrese su nombre completo",font=(14), bg="AliceBlue")
+NombreNuevaCuentaENT=Entry(MenuInicio)
+ContrasenniaCuentaNueva = Label(MenuInicio,text="Ingrese una contraseña",font=(14), bg="AliceBlue")
+ContrasenniaNuevaCuentaENT=Entry(MenuInicio)
+ConfirmacionContrasennia = Label(MenuInicio,text="Ingrese de nuevo la contraseña",font=(14), bg="AliceBlue")
+ConfirmarcionContrasenniaENT=Entry(MenuInicio)
+BotonCuentaNueva=Button(MenuInicio,text="Crear cuenta", height = 2, width = 10)
+volverMenuCuentaNueva=Button(MenuInicio,text="Volver al Menu de iniciar sesión")
 #widgets MenuDoctores
 titulo1=Label(MenuInicio,text="Bienvenido Doctor",font=("Arial Bold",18), justify=CENTER, bg="AliceBlue")
 titulo2=Label(MenuInicio,text="Que desea realizar ",font=("Arial Bold",12), justify=CENTER, bg="AliceBlue")
@@ -152,12 +164,65 @@ mes = " "
 citaEliminar = Button(MenuInicio, text = "Eliminar Cita")
 citaModificar = Button(MenuInicio, text="Modificar Cita")
 #widgets consultarReceta
-mensaje1=Label(MenuInicio, bg="AliceBlue")
+tituloReceta=Label(MenuInicio, bg="AliceBlue")
 hayReceta=Label(MenuInicio, bg="AliceBlue")
 receta=Label(MenuInicio, bg="AliceBlue")
 NohayRecetas=Label(MenuInicio, bg="AliceBlue")
 volverConsultarRecetas=Button(MenuInicio,text="Volver al menu de pacientes")
 
+#Menu Creacion de una nueva cuenta
+def CrearCuenta():
+        errorInicio.place_forget()
+        bienvenida.place_forget()
+        aviso.place_forget()
+        ingresoCedula.place_forget()
+        cedula.place_forget()
+        ingresoContrasenia.place_forget()
+        contrasenia.place_forget()
+        boton.place_forget()
+        usuarioNuevo.place_forget()
+
+        TituloNuevaCuenta.place(x=285,y=55)
+        CedulaCuentaNueva.place(x=200,y=130)
+        CedulaNuevaCuentaENT.place(x=450,y=134)
+        NombreNuevacuenta.place(x=200,y=200)
+        NombreNuevaCuentaENT.place(x=450,y=204)
+        ContrasenniaCuentaNueva.place(x=50,y=275)
+        ContrasenniaNuevaCuentaENT.place(x=220,y=279)
+        ConfirmacionContrasennia.place(x=380,y=275)
+        ConfirmarcionContrasenniaENT.place(x=610,y=279)
+
+        
+
+        #def crearCuenta():
+            #GET de las contraseñas 
+
+            # if ContrasenniaCuentaNueva == ConfirmacionContrasennia:
+
+                    #Crear y guardar las nuevas cuentas en las credenciales de pacientes 
+            #else:
+                    #messagebox o label contraseña no cinciden 
+            
+        def volver():
+            TituloNuevaCuenta.place_forget()
+            CedulaCuentaNueva.place_forget()
+            CedulaNuevaCuentaENT.place_forget()
+            NombreNuevacuenta.place_forget()
+            NombreNuevaCuentaENT.place_forget()
+            ContrasenniaCuentaNueva.place_forget()
+            ContrasenniaNuevaCuentaENT.place_forget()
+            ConfirmacionContrasennia.place_forget()
+            ConfirmarcionContrasenniaENT.place_forget()
+            menuPrincipal()
+
+        #BotonCuentaNueva.config(command=crearCuenta)
+        BotonCuentaNueva.place(x=350,y=390)
+        BotonCuentaNueva['bg'] = 'azure'
+            
+        volverMenuCuentaNueva.config(command=volver)
+        volverMenuCuentaNueva.place(x=620,y=510)
+        volverMenuCuentaNueva['bg'] = 'azure'
+        
 #Menu Doctores
 def crearExpedientes():
         titulo1.place_forget()
@@ -757,15 +822,15 @@ def consultarCita():
     TerminarCerrarSecion.place_forget()
     sinFechas.place_forget()
 
-    mensaje1.place(x=300,y=185)
-    fechalbl.place(x=95,y=200)
-    fechaCitalbl.place(x=95,y=235) ##
-    doctorlbl.place(x=320,y=200)
-    nombreDoctorlbl.place(x=320,y=235)##
-    horario1lbl.place(x=545,y=200)
-    horario2lbl.place(x=545,y=235)##
-    NohayCitaslbl.place(x=195,y=235)
-    sinFechas.place(x=195, y=235)
+    mensaje1.place(x=300,y=65)
+    fechalbl.place(x=135,y=200)
+    fechaCitalbl.place(x=135,y=235) ##
+    doctorlbl.place(x=360,y=200)
+    nombreDoctorlbl.place(x=360,y=235)##
+    horario1lbl.place(x=585,y=200)
+    horario2lbl.place(x=585,y=235)##
+    NohayCitaslbl.place(x=195,y=300)
+    sinFechas.place(x=195, y=335)
     fechalbl.config(text="Fecha",font=("Arial",12), justify=CENTER)
     doctorlbl.config(text="Doctor/a",font=("Arial",12), justify=CENTER)
     horario1lbl.config(text="Hora",font=("Arial",12), justify=CENTER)
@@ -778,14 +843,14 @@ def consultarCita():
             if nombrePaciente in k:
                 fecha=str(i)
                 fecha = fecha + " de " + mes
-                fechaCitalbl.config(text=fecha,font=("Arial",12), justify=CENTER)##
-                nombreDoctorlbl.config(text=k[2],font=("Arial",12), justify=CENTER)##
-                horario2lbl.config(text=k[1],font=("Arial",12), justify=CENTER)##
-                citaEliminar.place(x=225,y=500)
-                citaModificar.place(x=400, y = 500)
+                fechaCitalbl.config(text=fecha,font=("Arial",12), justify=CENTER, bg="AliceBlue")##
+                nombreDoctorlbl.config(text=k[2],font=("Arial",12), justify=CENTER, bg="AliceBlue")##
+                horario2lbl.config(text=k[1],font=("Arial",12), justify=CENTER, bg="AliceBlue")##
+                citaEliminar.place(x=215,y=410)
+                citaModificar.place(x=440, y=410)
                 NohayCitaslbl.place_forget()   
-            else:
-                NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
+            else:  
+                NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER, bg="AliceBlue")
 
     def modificarCita():
         global doctor
@@ -815,7 +880,7 @@ def consultarCita():
                     sinFechas.place_forget()
                     break
                 else:
-                    sinFechas.config(text="El doctor no tiene más fechas disponibles")
+                    sinFechas.config(text="El doctor no tiene más fechas disponibles", bg="AliceBlue")
             break
     citaModificar.config(command=modificarCita)           
                     
@@ -858,8 +923,8 @@ def consultarReceta():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
 
-    mensaje1.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
-    mensaje1.place(x=300,y=185)
+    tituloReceta.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
+    tituloReceta.place(x=300,y=185)
                         
     hayReceta.place(x=205,y=300)
     NohayRecetas.place(x=195,y=300)
@@ -875,7 +940,7 @@ def consultarReceta():
                         NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
 
     def volver():
-        mensaje1.place_forget()
+        tituloReceta.place_forget()
         volverConsultarRecetas.place_forget()
         hayReceta.place_forget()
         receta.place_forget()
@@ -965,23 +1030,31 @@ def inicioDeSesion():
         if comprobador == False:
             intentos = intentos - 1
             if intentos > 0:
-                errorInicio.config(text="Datos incorrectos, intente de nuevo")
-                errorInicio.place(x=0, y=500)
+                errorInicio.config(text="Datos incorrectos, intente de nuevo", font=("Times",12), bg="AliceBlue")
+                errorInicio.place(x=300, y=450)
             else:
-                errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos")
-                errorInicio.place(x=100, y=500)
+                messagebox.showinfo(message="Lo sentimos no se encuentra en nuestra base de datos")
+                #errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos")
+                #errorInicio.place(x=100, y=500)
 
 def menuPrincipal():
+    volverMenuCuentaNueva.place_forget()
+    BotonCuentaNueva.place_forget()
+
     bienvenida.place(x=250,y=55)
-    aviso.place(x=260,y=150)
+    aviso.place(x=300,y=150)
     ingresoCedula.place(x=40,y=250)
-    cedula.place(x=250,y=255)
+    cedula.place(x=170,y=255)
     ingresoContrasenia.place(x=460,y=250)
-    contrasenia.place(x=630,y=255)
+    contrasenia.place(x=575,y=255)
     boton.config(command=inicioDeSesion)
     boton.place(x=350,y=310)
     boton['bg'] = 'AliceBlue'
     boton['fg'] = 'cyan4'
+    usuarioNuevo.place(x=310, y=430)
+    usuarioNuevo['bg'] = 'AliceBlue'
+    usuarioNuevo['fg'] = 'DeepSkyBlue3'
+    usuarioNuevo.config(command=CrearCuenta)
 
 menuPrincipal()
 MenuInicio.mainloop()
