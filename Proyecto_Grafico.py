@@ -1,5 +1,6 @@
 from tkinter.ttk import Combobox
 from tkinter import *
+from tkinter import messagebox
 import random
 
 randList=[]
@@ -138,13 +139,14 @@ solicitarBoton=Button(MenuInicio)
 volverSolicitudCitas=Button(MenuInicio,text="Volver al menu de pacientes")
 #widgets consultarCitas
 mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Arial Bold",16), justify=CENTER, bg="AliceBlue")
-hayCitas = Label(MenuInicio, bg="AliceBlue")
-diaCita = Label(MenuInicio, bg="AliceBlue")
-doctorCitas = Label(MenuInicio, bg="AliceBlue")
-nombreDoctor = Label(MenuInicio, bg="AliceBlue")
-horario1 = Label(MenuInicio, bg="AliceBlue")
-horario2 = Label(MenuInicio, bg="AliceBlue")
-NohayCitas = Label(MenuInicio, bg="AliceBlue")
+fechalbl = Label(MenuInicio, bg="AliceBlue")
+fechaCitalbl = Label(MenuInicio, bg="AliceBlue")
+doctorlbl = Label(MenuInicio, bg="AliceBlue")
+nombreDoctorlbl = Label(MenuInicio, bg="AliceBlue")
+horario1lbl = Label(MenuInicio, bg="AliceBlue")
+horario2lbl = Label(MenuInicio, bg="AliceBlue")
+NohayCitaslbl = Label(MenuInicio, bg="AliceBlue")
+sinFechas=Label(MenuInicio)
 volverConsultarCitas=Button(MenuInicio,text="Volver al menu de pacientes")
 mes = " "
 citaEliminar = Button(MenuInicio, text = "Eliminar Cita")
@@ -163,6 +165,7 @@ def crearExpedientes():
         botonCrear.place_forget()
         botonConsultar.place_forget()
         terminarSesion.place_forget()
+        errorInicio.place_forget()
 
         informacion.place(x=210,y=55)
         ingresoCedulaNuevo.place(x=5,y=120)
@@ -361,7 +364,8 @@ def solicitarCita():
     consultaCita.place_forget()
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
-
+    errorInicio.place_forget()
+    
     hayCitas.place(x=85,y=355)
     diaCita.place(x=340,y=355) ##
     doctorCitas.place(x=360,y=355)
@@ -370,7 +374,7 @@ def solicitarCita():
     horario2.place(x=265,y=375)
     calendario.place(x=350,y=20)
     mesEscogido.place(x=300,y=50)
-    escogerMes.place(x=350, y=50)
+    escogerMes.place(x=450, y=50)
     #mes.place(x=175,y=50)
     
     
@@ -378,6 +382,8 @@ def solicitarCita():
         global mes
         mes = mesEscogido.get()
         if mesEscogido.get() == "Abril" or mesEscogido.get() == "Junio" or mesEscogido.get() == "Septiembre" or mesEscogido.get() == "Noviembre": 
+            rb31.place_forget()
+           
             rb1.place(x=85, y=100)
             rb2.place(x=125, y=100)
             rb3.place(x=165, y=100)
@@ -409,6 +415,10 @@ def solicitarCita():
             rb29.place(x=85, y=260)
             rb30.place(x=125, y=260)
         elif mesEscogido.get() == "Febrero":
+            rb29.place_forget()
+            rb30.place_forget()
+            rb31.place_forget()
+
             rb1.place(x=85, y=100)
             rb2.place(x=125, y=100)
             rb3.place(x=165, y=100)
@@ -745,18 +755,20 @@ def consultarCita():
     consultaCita.place_forget()
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
+    sinFechas.place_forget()
 
     mensaje1.place(x=300,y=185)
-    hayCitas.place(x=95,y=400)
-    diaCita.place(x=95,y=435) ##
-    doctorCitas.place(x=445,y=400)
-    nombreDoctor.place(x=445,y=450)##
-    horario1.place(x=500,y=400)
-    horario2.place(x=500,y=435)##
-    NohayCitas.place(x=195,y=435)
-    hayCitas.config(text="Fecha",font=("Arial",12), justify=CENTER)
-    doctorCitas.config(text="Doctor/a",font=("Arial",12), justify=CENTER)
-    horario1.config(text="Hora",font=("Arial",12), justify=CENTER)
+    fechalbl.place(x=95,y=200)
+    fechaCitalbl.place(x=95,y=235) ##
+    doctorlbl.place(x=320,y=200)
+    nombreDoctorlbl.place(x=320,y=235)##
+    horario1lbl.place(x=545,y=200)
+    horario2lbl.place(x=545,y=235)##
+    NohayCitaslbl.place(x=195,y=235)
+    sinFechas.place(x=195, y=235)
+    fechalbl.config(text="Fecha",font=("Arial",12), justify=CENTER)
+    doctorlbl.config(text="Doctor/a",font=("Arial",12), justify=CENTER)
+    horario1lbl.config(text="Hora",font=("Arial",12), justify=CENTER)
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
@@ -766,36 +778,44 @@ def consultarCita():
             if nombrePaciente in k:
                 fecha=str(i)
                 fecha = fecha + " de " + mes
-                diaCita.config(text=fecha,font=("Arial",12), justify=CENTER)##
-                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
-                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                fechaCitalbl.config(text=fecha,font=("Arial",12), justify=CENTER)##
+                nombreDoctorlbl.config(text=k[2],font=("Arial",12), justify=CENTER)##
+                horario2lbl.config(text=k[1],font=("Arial",12), justify=CENTER)##
                 citaEliminar.place(x=225,y=500)
-                citaModificar.place(x=275, y = 500)
-                NohayCitas.place_forget()    
+                citaModificar.place(x=400, y = 500)
+                NohayCitaslbl.place_forget()   
             else:
-                NohayCitas.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
-    
+                NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Arial",12), justify=CENTER)
+
     def modificarCita():
+        global doctor
         for i in citasMensuales.keys():
             for k in citasMensuales[i]:
                 if nombrePaciente in k:
                     doctor=k[2]
                     hora=k[1]
-                    k[0]=False
-                    k[3]="Paciente"
+
         for i in citasMensuales.keys():
             for k in citasMensuales[i]:
                 if doctor in k and k[0] == False and k[1]!=hora:
+                    for j in citasMensuales.keys():
+                        for l in citasMensuales[j]:
+                            if nombrePaciente in l:
+                                l[0]=False
+                                l[3]="Paciente"
+                                break
+                        break
                     k[0]=True
+                    k[3]=nombrePaciente
                     fecha=str(i)
                     fecha = fecha + " de " + mes
                     diaCita.config(text=fecha,font=("Arial",12), justify=CENTER)##
                     nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
                     horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                    sinFechas.place_forget()
                     break
                 else:
-                    NohayCitas.config(text="El doctor no tiene más fechas disponibles")
-                    break
+                    sinFechas.config(text="El doctor no tiene más fechas disponibles")
             break
     citaModificar.config(command=modificarCita)           
                     
@@ -813,13 +833,17 @@ def consultarCita():
     def volver():
         mensaje1.place_forget()
         hayCitas.place_forget()
-        diaCita.place_forget()
-        doctorCitas.place_forget()
-        nombreDoctor.place_forget()
-        horario1.place_forget()
-        horario2.place_forget()
-        NohayCitas.place_forget()
+        fechalbl.place_forget()
+        fechaCitalbl.place_forget()
+        doctorlbl.place_forget()
+        nombreDoctorlbl.place_forget()
+        horario1lbl.place_forget()
+        horario2lbl.place_forget()
+        NohayCitaslbl.place_forget()
         volverConsultarCitas.place_forget()
+        citaEliminar.place_forget()
+        citaModificar.place_forget()
+        sinFechas.place_forget()
         inicioDeSesion()
 
     volverConsultarCitas.config(command=volver)
@@ -846,7 +870,7 @@ def consultarReceta():
                     try:
                         if i[6] != "":
                             hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Arial",12), justify=CENTER)
-                        receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
+                            receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
                     except:
                         NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
 
