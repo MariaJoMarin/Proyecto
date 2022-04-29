@@ -67,27 +67,27 @@ registro=Label(MenuInicio,text="Registro de expedientes",font=("Times",16,"bold"
 ingresoCedulaConsulta = Label(MenuInicio,text="Ingrese el número de cédula del paciente",font=("Times",14), bg="AliceBlue")
 cedulaConsulta=Entry(MenuInicio)
 expediente=Label(MenuInicio,text="Expediente del paciente",font=("Times",16,"bold","italic"), justify=CENTER, bg="AliceBlue")
-noCedula = Label(MenuInicio,text="Numero de cédula",font=("Times",14), bg="AliceBlue")
-salidaCedula = Label(MenuInicio, font=("Times",14), bg="AliceBlue")
-nombrePaciente=Label(MenuInicio, text="Nombre",font=("Times",14), bg="AliceBlue")
-salidaNombre=Label(MenuInicio, font=("Times",14), bg="AliceBlue")
-edadPaciente=Label(MenuInicio, text="Edad", bg="AliceBlue")
-salidaEdad=Label(MenuInicio, font=("Times",14), bg="AliceBlue")
-alturaPaciente=Label(MenuInicio, text="Altura",font=("Times",14), bg="AliceBlue")
-salidaAltura=Label(MenuInicio,font=("Times",14), bg="AliceBlue")
-pesoPaciente=Label(MenuInicio, text="Peso",font=("Times",14), bg="AliceBlue")
-salidaPeso=Label(MenuInicio,font=("Times",14), bg="AliceBlue")
-padecimientoPaciente=Label(MenuInicio, text="Padecimiento",font=("Times",14), bg="AliceBlue")
-salidaPadecimiento=Label(MenuInicio, bg="AliceBlue")
-recetaPaciente=Label(MenuInicio, text="Receta",font=("Times",14), bg="AliceBlue")
-salidaReceta=Label(MenuInicio,font=("Times",14), bg="AliceBlue")
-padecimientolbl = Label(MenuInicio,font=("Times",14), bg="AliceBlue")
+noCedula = Label(MenuInicio,text="Numero de cédula:",font=("Times",12), bg="AliceBlue")
+salidaCedula = Label(MenuInicio, font=("Times",12), bg="AliceBlue")
+nombrePaciente=Label(MenuInicio, text="Nombre:",font=("Times",12), bg="AliceBlue")
+salidaNombre=Label(MenuInicio, font=("Times",12), bg="AliceBlue")
+edadPaciente=Label(MenuInicio, text="Edad:",font=("Times",12), bg="AliceBlue")
+salidaEdad=Label(MenuInicio, font=("Times",12), bg="AliceBlue")
+alturaPaciente=Label(MenuInicio, text="Altura:",font=("Times",12), bg="AliceBlue")
+salidaAltura=Label(MenuInicio,font=("Times",12), bg="AliceBlue")
+pesoPaciente=Label(MenuInicio, text="Peso:",font=("Times",12), bg="AliceBlue")
+salidaPeso=Label(MenuInicio,font=("Times",12), bg="AliceBlue")
+padecimientoPaciente=Label(MenuInicio, text="Padecimiento:",font=("Times",12), bg="AliceBlue")
+salidaPadecimiento=Label(MenuInicio,font=("Times",12), bg="AliceBlue")
+recetaPaciente=Label(MenuInicio, text="Receta:",font=("Times",12), bg="AliceBlue")
+salidaReceta=Label(MenuInicio,font=("Times",12), bg="AliceBlue")
+padecimientolbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 agregarPadecimiento = Entry(MenuInicio)
-recetalbl = Label(MenuInicio,font=("Times",14), bg="AliceBlue")
+recetalbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 agregarReceta=Entry(MenuInicio)
-alturalbl = Label(MenuInicio,font=("Times",14), bg="AliceBlue")
+alturalbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 agregarAltura=Entry(MenuInicio)
-pesolbl=Label(MenuInicio,font=("Times",14), bg="AliceBlue")
+pesolbl=Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 agregarPeso=Entry(MenuInicio)
 modificarEx=Button(MenuInicio,text="Modificar expediente")
 botonConsulta=Button(MenuInicio,text="Buscar expediente") 
@@ -188,9 +188,9 @@ def CrearCuenta():
         NombreNuevacuenta.place(x=200,y=200)
         NombreNuevaCuentaENT.place(x=450,y=204)
         ContrasenniaCuentaNueva.place(x=50,y=275)
-        ContrasenniaNuevaCuentaENT.place(x=220,y=279)
+        ContrasenniaNuevaCuentaENT.place(x=225,y=279)
         ConfirmacionContrasennia.place(x=380,y=275)
-        ConfirmarcionContrasenniaENT.place(x=610,y=279)
+        ConfirmarcionContrasenniaENT.place(x=615,y=279)
 
         
 
@@ -218,11 +218,12 @@ def CrearCuenta():
 
         #BotonCuentaNueva.config(command=crearCuenta)
         BotonCuentaNueva.place(x=350,y=390)
-        BotonCuentaNueva['bg'] = 'azure'
+        BotonCuentaNueva['bg'] = 'gainsboro'
+        BotonCuentaNueva['fg'] = 'SlateBlue'
             
         volverMenuCuentaNueva.config(command=volver)
         volverMenuCuentaNueva.place(x=620,y=510)
-        volverMenuCuentaNueva['bg'] = 'azure'
+        volverMenuCuentaNueva['bg'] = 'OldLace'
         
 #Menu Doctores
 def crearExpedientes():
@@ -235,13 +236,11 @@ def crearExpedientes():
 
         informacion.place(x=210,y=55)
         ingresoCedulaNuevo.place(x=5,y=120)
-        nuevaCedula.place(x=550,y=124)
+        nuevaCedula.place(x=580,y=124)
         ingresoNombreNuevo.place(x=5,y=170)
-        nuevoNombre.place(x=300,y=174)
+        nuevoNombre.place(x=320,y=174)
         ingresoEdad.place(x=5,y=220)
-        nuevaEdad.place(x=215,y=224)
-
-                        
+        nuevaEdad.place(x=220,y=224)
                         
         def registrar():
             global registroInformacion
@@ -255,8 +254,8 @@ def crearExpedientes():
             expedientesPacientes.append([cedula, nombreCompleto, edad])
         botonCrear.config(command=registrar)
         botonCrear.place(x=20,y=270)
-        botonCrear['bg'] = 'Silver'
-        botonCrear['fg'] = 'SaddleBrown'
+        botonCrear['bg'] = 'gainsboro'
+        botonCrear['fg'] = 'SlateBlue'
 
         def volver():
             informacion.place_forget()
@@ -272,7 +271,7 @@ def crearExpedientes():
             inicioDeSesion()
         volverMenuRegistrar.config(command=volver)
         volverMenuRegistrar.place(x=634,y=510)
-        volverMenuRegistrar['bg'] = 'azure'
+        volverMenuRegistrar['bg'] = 'OldLace'
 
 def consultarExpediente():
         titulo1.place_forget()
@@ -284,28 +283,28 @@ def consultarExpediente():
         registro.place(x=280,y=55)
                         
         ingresoCedulaConsulta.place(x=5,y=120)
-        cedulaConsulta.place(x=300,y=124)
+        cedulaConsulta.place(x=320,y=124)
         expediente.place(x=5,y=390)
         noCedula.place(x=5, y=420)
-        salidaCedula.place(x=105, y=420)
-        nombrePaciente.place(x=205, y=420)
-        salidaNombre.place(x=255, y=420)
+        salidaCedula.place(x=125, y=420)
+        nombrePaciente.place(x=210, y=420)
+        salidaNombre.place(x=265, y=420)
         edadPaciente.place(x=365, y=420)
         salidaEdad.place(x=405, y=420)
         alturaPaciente.place(x=5, y=470)
         salidaAltura.place(x=45, y=470)
-        pesoPaciente.place(x=95, y=470)
-        salidaPeso.place(x=125, y=470)
-        padecimientoPaciente.place(x=200, y=470) 
+        pesoPaciente.place(x=105, y=470)
+        salidaPeso.place(x=140, y=470)
+        padecimientoPaciente.place(x=210, y=470) 
         salidaPadecimiento.place(x=300, y=470)
-        recetaPaciente.place(x=365,y=470)
-        salidaReceta.place(x=405, y=470)
+        recetaPaciente.place(x=380,y=470)
+        salidaReceta.place(x=430, y=470)
         padecimientolbl.place(x=5, y=200)
         recetalbl.place(x=300, y=200)
         alturalbl.place(x=550, y=200)
         pesolbl.place(x=5,y=240)
-        modificarEx['bg'] = 'Silver'
-        modificarEx['fg'] = 'BlueViolet'
+        modificarEx['bg'] = 'gainsboro'
+        modificarEx['fg'] = 'SlateBlue'
         def busqueda():
             global posicionExpediente
             cedula = int(cedulaConsulta.get())
@@ -335,12 +334,12 @@ def consultarExpediente():
                         padecimientolbl.config(text="Agregar padecimiento")
                         agregarPadecimiento.place(x=150,y=200)
                         recetalbl.config(text="Agregar receta")
-                        agregarReceta.place(x=390,y=200)
+                        agregarReceta.place(x=405,y=200)
                         alturalbl.config(text="Agregar altura")
-                        agregarAltura.place(x=640,y=200)
+                        agregarAltura.place(x=650,y=200)
                         pesolbl.config(text="Agregar peso")
-                        agregarPeso.place(x=90,y=240)
-                        modificarEx.place(x=600,y=400)
+                        agregarPeso.place(x=100,y=240)
+                        modificarEx.place(x=630,y=400)
 
         def modficarExpediente():
             if str(agregarAltura.get()) != "":
@@ -373,8 +372,8 @@ def consultarExpediente():
 
         botonConsulta.config(command = busqueda)                        
         botonConsulta.place(x=20,y=160)
-        botonConsulta['bg'] = 'Silver'
-        botonConsulta['fg'] = 'BlueViolet'
+        botonConsulta['bg'] = 'gainsboro'
+        botonConsulta['fg'] = 'SlateBlue'
         modificarEx.config(command=modficarExpediente)
                         
                         
@@ -411,7 +410,7 @@ def consultarExpediente():
             inicioDeSesion()
         volverMenuConsulta.config(command=volver)
         volverMenuConsulta.place(x=634,y=510)
-        volverMenuConsulta['bg'] = 'azure'
+        volverMenuConsulta['bg'] = 'OldLace'
 
                         
 def cerrarSesionDoctores():
@@ -439,7 +438,7 @@ def solicitarCita():
     horario1.place(x=228,y=375)
     horario2.place(x=265,y=375)
     calendario.place(x=350,y=20)
-    mesEscogido.place(x=300,y=50)
+    mesEscogido.place(x=300,y=52)
     escogerMes.place(x=450, y=50)
     #mes.place(x=175,y=50)
     
@@ -546,7 +545,7 @@ def solicitarCita():
             rb30.place(x=125, y=260)
             rb31.place(x=165,y=260)
     escogerMes.config(command=cambiarMes)                   
-    solicitarBoton['bg'] = 'Silver'
+    solicitarBoton['bg'] = 'gainsboro'
     def cita():
         horarios=[]
         for k in citasMensuales[dia]:
@@ -556,7 +555,7 @@ def solicitarCita():
         horarioCitas.place(x=470,y=180)
         solicitarBoton.config(text="Solicitar cita")
         solicitarBoton.place(x=630, y=177)
-        solicitarBoton['fg'] = 'BlueViolet'
+        solicitarBoton['fg'] = 'SlateBlue'
     def numero1():
         global dia
         dia = 1
@@ -722,12 +721,12 @@ def solicitarCita():
                         nombrePaciente = i[1]
                 k[3]=nombrePaciente
 
-                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Arial",12), justify=CENTER)
-                diaCita.config(text=str(dia),font=("Arial",12), justify=CENTER)##
-                doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER)
-                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER)##
-                horario1.config(text="a las ",font=("Arial",12), justify=CENTER)
-                horario2.config(text=k[1],font=("Arial",12), justify=CENTER)##
+                hayCitas.config(text="Su cita ha sido anotada para el dia ",font=("Arial",12), justify=CENTER, bg="AliceBlue")
+                diaCita.config(text=str(dia),font=("Arial",12), justify=CENTER, bg="AliceBlue")##
+                doctorCitas.config(text="con el doctor/a",font=("Arial",12), justify=CENTER, bg="AliceBlue")
+                nombreDoctor.config(text=k[2],font=("Arial",12), justify=CENTER, bg="AliceBlue")##
+                horario1.config(text="a las ",font=("Arial",12), justify=CENTER, bg="AliceBlue")
+                horario2.config(text=k[1],font=("Arial",12), justify=CENTER, bg="AliceBlue")##
                 break
                                             
     def volver():
@@ -811,7 +810,7 @@ def solicitarCita():
     solicitarBoton.config(command=procesoCita)
     volverSolicitudCitas.config(command=volver)
     volverSolicitudCitas.place(x=617,y=547)
-    volverSolicitudCitas['bg'] = 'azure'
+    volverSolicitudCitas['bg'] = 'OldLace'
 
 
 def consultarCita():
@@ -832,9 +831,9 @@ def consultarCita():
     horario2lbl.place(x=585,y=235)##
     NohayCitaslbl.place(x=195,y=300)
     sinFechas.place(x=195, y=335)
-    fechalbl.config(text="Fecha",font=("Times",12), justify=CENTER)
-    doctorlbl.config(text="Doctor/a",font=("Times",12), justify=CENTER)
-    horario1lbl.config(text="Hora",font=("Times",12), justify=CENTER)
+    fechalbl.config(text="Fecha",font=("Times",12), justify=CENTER, bg="AliceBlue")
+    doctorlbl.config(text="Doctor/a",font=("Times",12), justify=CENTER, bg="AliceBlue")
+    horario1lbl.config(text="Hora",font=("Times",12), justify=CENTER, bg="AliceBlue")
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
@@ -851,7 +850,7 @@ def consultarCita():
                 citaModificar.place(x=440, y=410)
                 NohayCitaslbl.place_forget()   
             else:  
-                NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Times",12), justify=CENTER, bg="AliceBlue")
+                NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Times",14), justify=CENTER, bg="AliceBlue")
 
     def modificarCita():
         global doctor
@@ -875,15 +874,17 @@ def consultarCita():
                     k[3]=nombrePaciente
                     fecha=str(i)
                     fecha = fecha + " de " + mes
-                    diaCita.config(text=fecha,font=("Times",12), justify=CENTER)##
-                    nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER)##
-                    horario2.config(text=k[1],font=("Times",12), justify=CENTER)##
+                    diaCita.config(text=fecha,font=("Times",12), justify=CENTER, bg="AliceBlue")##
+                    nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER, bg="AliceBlue")##
+                    horario2.config(text=k[1],font=("Times",12), justify=CENTER, bg="AliceBlue")##
                     sinFechas.place_forget()
                     break
                 else:
                     sinFechas.config(text="El doctor no tiene más fechas disponibles",font=("Times",12), bg="AliceBlue")
             break
-    citaModificar.config(command=modificarCita)           
+    citaModificar.config(command=modificarCita)        
+    citaModificar['bg'] = 'gainsboro'
+    citaModificar['fg'] = 'SlateBlue'
                     
     def eliminarCita():
         for i in citasMensuales.keys():
@@ -896,6 +897,9 @@ def consultarCita():
                     horario2.config(text=" ")
                     nombreDoctor.config(text=" ")
     citaEliminar.config(command=eliminarCita)
+    citaEliminar['bg'] = 'gainsboro'
+    citaEliminar['fg'] = 'SlateBlue'
+
     def volver():
         mensaje1.place_forget()
         hayCitas.place_forget()
@@ -914,7 +918,7 @@ def consultarCita():
 
     volverConsultarCitas.config(command=volver)
     volverConsultarCitas.place(x=617,y=547)
-    volverConsultarCitas['bg'] = 'azure'
+    volverConsultarCitas['bg'] = 'OldLace'
 
 def consultarReceta():
     titulo3.place_forget()
@@ -924,7 +928,7 @@ def consultarReceta():
     consultaReceta.place_forget()
     TerminarCerrarSecion.place_forget()
 
-    tituloReceta.config(text="Consulta de Recetas",font=("Arial Bold",16), justify=CENTER)
+    tituloReceta.config(text="Consulta de Recetas",font=(" Times Bold",16), justify=CENTER,bg="AliceBlue")
     tituloReceta.place(x=300,y=185)
                         
     hayReceta.place(x=205,y=300)
@@ -935,10 +939,10 @@ def consultarReceta():
                 if cedulaLogIn in i:
                     try:
                         if i[6] != "":
-                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Arial",12), justify=CENTER)
+                            hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Times",14), justify=CENTER,bg="AliceBlue")
                             receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
                     except:
-                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Arial",12), justify=CENTER)
+                        NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Times",14), justify=CENTER,bg="AliceBlue")
 
     def volver():
         tituloReceta.place_forget()
@@ -949,7 +953,7 @@ def consultarReceta():
         inicioDeSesion()
     volverConsultarRecetas.config(command=volver)
     volverConsultarRecetas.place(x=617,y=547)
-    volverConsultarRecetas['bg'] = 'azure'
+    volverConsultarRecetas['bg'] = 'OldLace'
                         
 def cerrarSesionPacientes():
     titulo3.place_forget()
@@ -985,15 +989,15 @@ def inicioDeSesion():
 
             botonCrear.config(command = crearExpedientes)                
             botonCrear.place(x=150,y=325)
-            botonCrear['bg'] = 'Silver'
-            botonCrear['fg'] = 'BlueViolet'
+            botonCrear['bg'] = 'gainsboro'
+            botonCrear['fg'] = 'SlateBlue'
             botonConsultar.config(command = consultarExpediente)                
             botonConsultar.place(x=520,y=325)
-            botonConsultar['bg'] = 'Silver'
-            botonConsultar['fg'] = 'BlueViolet'
+            botonConsultar['bg'] = 'gainsboro'
+            botonConsultar['fg'] = 'SlateBlue'
             terminarSesion.config(command = cerrarSesionDoctores)                
             terminarSesion.place(x=687,y=547)
-            terminarSesion['bg'] = 'azure'
+            terminarSesion['bg'] = 'OldLace'
 
         else:
             #Inicio sesion pacientes
@@ -1017,18 +1021,18 @@ def inicioDeSesion():
                     solicitudCita.config(command=solicitarCita)
                     solicitudCita.place(x=120,y=325)
                     solicitudCita['bg'] = 'gainsboro'
-                    solicitudCita['fg'] = 'Darkcyan'
+                    solicitudCita['fg'] = 'SlateBlue'
                     consultaCita.config(command=consultarCita)
                     consultaCita.place(x=320,y=325)
                     consultaCita['bg'] = 'gainsboro'
-                    consultaCita['fg'] = 'Darkcyan'
+                    consultaCita['fg'] = 'SlateBlue'
                     consultaReceta.config(command=consultarReceta)
                     consultaReceta.place(x=520,y=325)
                     consultaReceta['bg'] = 'gainsboro'
-                    consultaReceta['fg'] = 'Darkcyan'
+                    consultaReceta['fg'] = 'SlateBlue'
                     TerminarCerrarSecion.config(command=cerrarSesionPacientes)
                     TerminarCerrarSecion.place(x=687,y=547)
-                    TerminarCerrarSecion['bg'] = 'azure'
+                    TerminarCerrarSecion['bg'] = 'OldLace'
 
         if comprobador == False:
             intentos = intentos - 1
