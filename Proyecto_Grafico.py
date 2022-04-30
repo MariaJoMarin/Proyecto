@@ -20,7 +20,7 @@ for i in range(0,31):
 
 MenuInicio=Tk()
 MenuInicio.title("Menu de Inicio")
-MenuInicio.geometry("800x600")
+MenuInicio.geometry("800x600") #Holis
 MenuInicio.resizable(0,0)
 MenuInicio['bg'] = 'AliceBlue'
 
@@ -152,15 +152,12 @@ volverSolicitudCitas=Button(MenuInicio,text="Volver al menu de pacientes")
 #widgets consultarCitas
 mensaje1 = Label(MenuInicio,text="Consulta de citas",font=("Times",16), justify=CENTER, bg="AliceBlue")
 fechalbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
-fechaCitalbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 doctorlbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
-nombreDoctorlbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 horario1lbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
-horario2lbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 NohayCitaslbl = Label(MenuInicio,font=("Times",12), bg="AliceBlue")
 sinFechas=Label(MenuInicio)
 volverConsultarCitas=Button(MenuInicio,text="Volver al menu de pacientes")
-mes = " "
+mes = []
 citaEliminar = Button(MenuInicio, text = "Eliminar Cita")
 citaModificar = Button(MenuInicio, text="Modificar Cita")
 #widgets consultarReceta
@@ -182,6 +179,11 @@ def CrearCuenta():
         boton.place_forget()
         usuarioNuevo.place_forget()
 
+        #CedulaNuevaCuentaENT.delete(0,END)
+        #NombreNuevaCuentaENT.delete(0,END)
+        #ContrasenniaNuevaCuentaENT.delete(0,END)
+        #ConfirmarcionContrasenniaENT.delete(0,END)
+        
         TituloNuevaCuenta.place(x=285,y=55)
         CedulaCuentaNueva.place(x=200,y=130)
         CedulaNuevaCuentaENT.place(x=450,y=134)
@@ -194,16 +196,24 @@ def CrearCuenta():
 
         
 
-        #def crearCuenta():
-            #GET de las contraseñas 
+        def crearCuenta():
+            PasswordCuentaNueva=str(ContrasenniaNuevaCuentaENT.get())
+            ConfirPasswordCuentaNueva=str(ConfirmarcionContrasenniaENT.get())
+            if PasswordCuentaNueva == ConfirPasswordCuentaNueva:
+                infoCedulaCuentaNueva=int(CedulaNuevaCuentaENT.get())
+                infoNombreCuentaNueva=str(NombreNuevaCuentaENT.get())
+                infoNombreCuentaNueva = infoNombreCuentaNueva.title()
+                infoNombreCuentaNueva = infoNombreCuentaNueva.rstrip()
+                infoNombreCuentaNueva = infoNombreCuentaNueva.lstrip()
+                PasswordCuentaNueva=str(ContrasenniaNuevaCuentaENT.get())
+                credencialesPacientes.append([infoCedulaCuentaNueva,infoNombreCuentaNueva,PasswordCuentaNueva])
+                messagebox.showinfo(menssage="Su cuenta ha sido creada")
+            else:
+                messagebox.showwarning(message="Error,la contraseña y la confirmacion de contraseña son diferentes")
+                     
 
-            # if ContrasenniaCuentaNueva == ConfirmacionContrasennia:
-
-                    #Crear y guardar las nuevas cuentas en las credenciales de pacientes 
-            #else:
-                    #messagebox o label contraseña no cinciden 
-            
         def volver():
+            
             TituloNuevaCuenta.place_forget()
             CedulaCuentaNueva.place_forget()
             CedulaNuevaCuentaENT.place_forget()
@@ -216,14 +226,14 @@ def CrearCuenta():
 
             menuPrincipal()
 
-        #BotonCuentaNueva.config(command=crearCuenta)
+        BotonCuentaNueva.config(command=crearCuenta)
         BotonCuentaNueva.place(x=350,y=390)
         BotonCuentaNueva['bg'] = 'gainsboro'
         BotonCuentaNueva['fg'] = 'SlateBlue'
             
         volverMenuCuentaNueva.config(command=volver)
         volverMenuCuentaNueva.place(x=620,y=510)
-        volverMenuCuentaNueva['bg'] = 'OldLace'
+        volverMenuCuentaNueva['bg'] = 'NavajoWhite1'
         
 #Menu Doctores
 def crearExpedientes():
@@ -233,6 +243,9 @@ def crearExpedientes():
         botonConsultar.place_forget()
         terminarSesion.place_forget()
         errorInicio.place_forget()
+        #nuevaCedula.delete(0,END)
+        #nuevoNombre.delete(0,END)
+        #nuevaEdad.delete(0,END)
 
         informacion.place(x=210,y=55)
         ingresoCedulaNuevo.place(x=5,y=120)
@@ -271,7 +284,7 @@ def crearExpedientes():
             inicioDeSesion()
         volverMenuRegistrar.config(command=volver)
         volverMenuRegistrar.place(x=634,y=510)
-        volverMenuRegistrar['bg'] = 'OldLace'
+        volverMenuRegistrar['bg'] = 'NavajoWhite1'
 
 def consultarExpediente():
         titulo1.place_forget()
@@ -279,7 +292,13 @@ def consultarExpediente():
         botonCrear.place_forget()
         botonConsultar.place_forget()
         terminarSesion.place_forget()
-                        
+
+        #cedulaConsulta.delete(0,END)
+       #agregarPadecimiento.delete(0,END)
+        #agregarReceta.delete(0,END)
+        #agregarAltura.delete(0,END)
+        #agregarPeso.delete(0,END)
+
         registro.place(x=280,y=55)
                         
         ingresoCedulaConsulta.place(x=5,y=120)
@@ -410,7 +429,7 @@ def consultarExpediente():
             inicioDeSesion()
         volverMenuConsulta.config(command=volver)
         volverMenuConsulta.place(x=634,y=510)
-        volverMenuConsulta['bg'] = 'OldLace'
+        volverMenuConsulta['bg'] = 'NavajoWhite1'
 
                         
 def cerrarSesionDoctores():
@@ -431,6 +450,13 @@ def solicitarCita():
     TerminarCerrarSecion.place_forget()
     errorInicio.place_forget()
     
+    hayCitas.config(text="", bg="AliceBlue")
+    diaCita.config(text="", bg="AliceBlue")##
+    doctorCitas.config(text="", bg="AliceBlue")
+    nombreDoctor.config(text="", bg="AliceBlue")##
+    horario1.config(text="", bg="AliceBlue")
+    horario2.config(text="", bg="AliceBlue")
+
     hayCitas.place(x=85,y=355)
     diaCita.place(x=340,y=355) ##
     doctorCitas.place(x=360,y=355)
@@ -445,7 +471,7 @@ def solicitarCita():
     
     def cambiarMes():
         global mes
-        mes = mesEscogido.get()
+        mes.append(mesEscogido.get())
         if mesEscogido.get() == "Abril" or mesEscogido.get() == "Junio" or mesEscogido.get() == "Septiembre" or mesEscogido.get() == "Noviembre": 
             rb31.place_forget()
            
@@ -810,8 +836,7 @@ def solicitarCita():
     solicitarBoton.config(command=procesoCita)
     volverSolicitudCitas.config(command=volver)
     volverSolicitudCitas.place(x=617,y=547)
-    volverSolicitudCitas['bg'] = 'OldLace'
-
+    volverSolicitudCitas['bg'] = 'NavajoWhite1'
 
 def consultarCita():
     titulo3.place_forget()
@@ -824,34 +849,49 @@ def consultarCita():
 
     mensaje1.place(x=300,y=65)
     fechalbl.place(x=135,y=200)
-    fechaCitalbl.place(x=135,y=235) ##
     doctorlbl.place(x=360,y=200)
-    nombreDoctorlbl.place(x=360,y=235)##
     horario1lbl.place(x=585,y=200)
-    horario2lbl.place(x=585,y=235)##
     NohayCitaslbl.place(x=195,y=300)
     sinFechas.place(x=195, y=335)
     fechalbl.config(text="Fecha",font=("Times",12), justify=CENTER, bg="AliceBlue")
     doctorlbl.config(text="Doctor/a",font=("Times",12), justify=CENTER, bg="AliceBlue")
     horario1lbl.config(text="Hora",font=("Times",12), justify=CENTER, bg="AliceBlue")
+
+    listaFechaCita=[]
+    listaDoctorCita=[]
+    listaHorarioCita=[]
+    
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
-
+    posicionFecha=0
     for i in citasMensuales.keys():
         for k in citasMensuales[i]:
             if nombrePaciente in k:
                 fecha=str(i)
-                fecha = fecha + " de " + mes
-                fechaCitalbl.config(text=fecha,font=("Times",12), justify=CENTER, bg="AliceBlue")##
-                nombreDoctorlbl.config(text=k[2],font=("Times",12), justify=CENTER, bg="AliceBlue")##
-                horario2lbl.config(text=k[1],font=("Times",12), justify=CENTER, bg="AliceBlue")##
+                fecha = fecha + " de " + mes[posicionFecha]
+                posicionFecha=posicionFecha+1
+                listaFechaCita.append(Label(text=fecha))
+                listaDoctorCita.append(Label(text=k[2]))
+                listaHorarioCita.append(Label(text=k[1]))
                 citaEliminar.place(x=215,y=410)
                 citaModificar.place(x=440, y=410)
                 NohayCitaslbl.place_forget()   
             else:  
                 NohayCitaslbl.config(text="Segun nuestros registros usted no tiene citas pendientes ",font=("Times",14), justify=CENTER, bg="AliceBlue")
-
+    posicionYFecha=235
+    for k in listaFechaCita:
+        k.place(x=135,y=posicionYFecha)
+        posicionYFecha+=50
+    posicionYDoctor=235
+    for k in listaDoctorCita:
+        k.place(x=360, y=posicionYDoctor)
+        posicionYDoctor+=50
+    posicionYHorario=235
+    for k in listaHorarioCita:
+        k.place(x=585, y=posicionYHorario)
+        posicionYHorario+=50
+    
     def modificarCita():
         global doctor
         for i in citasMensuales.keys():
@@ -887,15 +927,54 @@ def consultarCita():
     citaModificar['fg'] = 'SlateBlue'
                     
     def eliminarCita():
-        for i in citasMensuales.keys():
-            for k in citasMensuales[i]:
-                if nombrePaciente in k:
-                    k[3]="Paciente"
-                    k[0]=False
-                    MenuInicio.after(50, consultarCita)
-                    diaCita.config(text=" ")
-                    horario2.config(text=" ")
-                    nombreDoctor.config(text=" ")
+        mensaje1.place_forget()
+        hayCitas.place_forget()
+        fechalbl.place_forget()
+        doctorlbl.place_forget()
+        horario1lbl.place_forget()
+        NohayCitaslbl.place_forget()
+        volverConsultarCitas.place_forget()
+        citaEliminar.place_forget()
+        citaModificar.place_forget()
+        sinFechas.place_forget()
+
+        for k in listaFechaCita:
+            k.place_forget()
+        for k in listaDoctorCita:
+            k.place_forget()
+        for k in listaHorarioCita:
+            k.place_forget()
+
+        fechasCitas=Combobox(MenuInicio, state="readonly")
+        fechas=[]
+        for k in listaFechaCita:
+            fechas.append(k.cget("text"))
+        fechasCitas.config(values=fechas)
+        fechasCitas.place(x=300, y=200)
+        botonEliminarCita=Button(text="Eliminar Cita")
+        botonEliminarCita.place(x=300, y=250)
+        def procesoEliminarCita():
+            for i in citasMensuales.keys():
+                for k in citasMensuales[i]:
+                    if nombrePaciente in k and str(i) in fechasCitas.get():
+                        for j in mes:
+                            if j in fechasCitas.get():
+                                mes.remove(j)
+                        k[3]="Paciente"
+                        k[0]=False
+                        #diaCita.config(text=" ")
+                        #horario2.config(text=" ")
+                        #nombreDoctor.config(text=" ")
+            for k in listaFechaCita:
+                k.destroy()
+            for k in listaDoctorCita:
+                k.destroy()
+            for k in listaHorarioCita:
+                k.destroy()
+            fechasCitas.place_forget()
+            botonEliminarCita.place_forget()
+            MenuInicio.after(1000, consultarCita())
+        botonEliminarCita.config(command=procesoEliminarCita)
     citaEliminar.config(command=eliminarCita)
     citaEliminar['bg'] = 'gainsboro'
     citaEliminar['fg'] = 'SlateBlue'
@@ -904,21 +983,25 @@ def consultarCita():
         mensaje1.place_forget()
         hayCitas.place_forget()
         fechalbl.place_forget()
-        fechaCitalbl.place_forget()
         doctorlbl.place_forget()
-        nombreDoctorlbl.place_forget()
         horario1lbl.place_forget()
-        horario2lbl.place_forget()
         NohayCitaslbl.place_forget()
         volverConsultarCitas.place_forget()
         citaEliminar.place_forget()
         citaModificar.place_forget()
         sinFechas.place_forget()
+
+        for k in listaFechaCita:
+            k.place_forget()
+        for k in listaDoctorCita:
+            k.place_forget()
+        for k in listaHorarioCita:
+            k.place_forget()
         inicioDeSesion()
 
     volverConsultarCitas.config(command=volver)
     volverConsultarCitas.place(x=617,y=547)
-    volverConsultarCitas['bg'] = 'OldLace'
+    volverConsultarCitas['bg'] = 'NavajoWhite1'
 
 def consultarReceta():
     titulo3.place_forget()
@@ -940,7 +1023,7 @@ def consultarReceta():
                     try:
                         if i[6] != "":
                             hayReceta.config(text="Segun nuestros registros usted tiene una receta de:",font=("Times",14), justify=CENTER,bg="AliceBlue")
-                            receta.config(text=i[6],font=("Arial",12), justify=CENTER)##
+                            receta.config(text=i[6],font=("Times",12), justify=CENTER)##
                     except:
                         NohayRecetas.config(text="Segun nuestros registros usted no tiene recetas pendientes ",font=("Times",14), justify=CENTER,bg="AliceBlue")
 
@@ -953,7 +1036,7 @@ def consultarReceta():
         inicioDeSesion()
     volverConsultarRecetas.config(command=volver)
     volverConsultarRecetas.place(x=617,y=547)
-    volverConsultarRecetas['bg'] = 'OldLace'
+    volverConsultarRecetas['bg'] = 'NavajoWhite1'
                         
 def cerrarSesionPacientes():
     titulo3.place_forget()
@@ -964,9 +1047,10 @@ def cerrarSesionPacientes():
     TerminarCerrarSecion.place_forget()
     menuPrincipal()
 
-def inicioDeSesion():
-    usuarioNuevo.place_forget()    
+def inicioDeSesion():   
     errorInicio.place_forget()
+    #cedula.delete(0,END)
+    #contrasenia.delete(0,END)
     global intentos
     global cedulaLogIn
     cedulaLogIn = int(cedula.get())
@@ -982,6 +1066,7 @@ def inicioDeSesion():
             cedula.place_forget()
             ingresoContrasenia.place_forget()
             contrasenia.place_forget()
+            usuarioNuevo.place_forget() 
             comprobador = True
 
             titulo1.place(x=325,y=105)
@@ -997,7 +1082,7 @@ def inicioDeSesion():
             botonConsultar['fg'] = 'SlateBlue'
             terminarSesion.config(command = cerrarSesionDoctores)                
             terminarSesion.place(x=687,y=547)
-            terminarSesion['bg'] = 'OldLace'
+            terminarSesion['bg'] = 'NavajoWhite1'
 
         else:
             #Inicio sesion pacientes
@@ -1012,6 +1097,7 @@ def inicioDeSesion():
                     ingresoContrasenia.place_forget()
                     contrasenia.place_forget()
                     errorInicio.place_forget()
+                    usuarioNuevo.place_forget() 
 
                     comprobador = True
                     
@@ -1032,17 +1118,17 @@ def inicioDeSesion():
                     consultaReceta['fg'] = 'SlateBlue'
                     TerminarCerrarSecion.config(command=cerrarSesionPacientes)
                     TerminarCerrarSecion.place(x=687,y=547)
-                    TerminarCerrarSecion['bg'] = 'OldLace'
+                    TerminarCerrarSecion['bg'] = 'NavajoWhite1'
 
-        if comprobador == False:
-            intentos = intentos - 1
-            if intentos > 0:
-                errorInicio.config(text="Datos incorrectos, intente de nuevo", font=("Times",12), bg="AliceBlue")
-                errorInicio.place(x=300, y=450)
-            else:
-                messagebox.showinfo(message="Lo sentimos no se encuentra en nuestra base de datos")
-                #errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos")
-                #errorInicio.place(x=100, y=500)
+    if comprobador == False:
+        intentos = intentos - 1
+        if intentos > 0:
+            errorInicio.config(text="Datos incorrectos, intente de nuevo", font=("Times",12), bg="AliceBlue")
+            errorInicio.place(x=50, y=550)
+        elif intentos <= 0:
+            messagebox.showwarning(message="Lo sentimos no se encuentra en nuestra base de datos")
+            #errorInicio.config(text="Lo sentimos no se encuentra en nuestra base de datos")
+            #errorInicio.place(x=100, y=500)
 
 def menuPrincipal():
     volverMenuCuentaNueva.place_forget()
@@ -1056,9 +1142,10 @@ def menuPrincipal():
     contrasenia.place(x=595,y=255)
     boton.config(command=inicioDeSesion)
     boton.place(x=350,y=310)
+    usuarioNuevo.place(x=315, y=400)
+    
     boton['bg'] = 'AliceBlue'
     boton['fg'] = 'cyan4'
-    usuarioNuevo.place(x=315, y=430)
     usuarioNuevo['bg'] = 'AliceBlue'
     usuarioNuevo['fg'] = 'DeepSkyBlue3'
     usuarioNuevo.config(command=CrearCuenta)
