@@ -860,7 +860,6 @@ def consultarCita():
     listaFechaCita=[]
     listaDoctorCita=[]
     listaHorarioCita=[]
-    
     for i in expedientesPacientes:
         if i[0] == cedulaLogIn:
             nombrePaciente = i[1]
@@ -894,34 +893,82 @@ def consultarCita():
     
     def modificarCita():
         global doctor
-        for i in citasMensuales.keys():
-            for k in citasMensuales[i]:
-                if nombrePaciente in k:
-                    doctor=k[2]
-                    hora=k[1]
+        doctor = ""
+        mensaje1.place_forget()
+        hayCitas.place_forget()
+        fechalbl.place_forget()
+        doctorlbl.place_forget()
+        horario1lbl.place_forget()
+        NohayCitaslbl.place_forget()
+        volverConsultarCitas.place_forget()
+        citaEliminar.place_forget()
+        citaModificar.place_forget()
+        sinFechas.place_forget()
+        for k in listaFechaCita:
+            k.place_forget()
+        for k in listaDoctorCita:
+            k.place_forget()
+        for k in listaHorarioCita:
+            k.place_forget()
+        mensajeFechas=Label(MenuInicio, text="Por favor selecione una cita")
+        mensajeFechas.place(x=300, y = 150)
+        fechasCitas=Combobox(MenuInicio, state="readonly")
+        fechas=[]
+        for k in listaFechaCita:
+            fechas.append(k.cget("text"))
+        fechasCitas.config(values=fechas)
+        fechasCitas.place(x=300, y=200)
+        botonModificarCita=Button(text="Modificar Cita")
+        botonModificarCita.place(x=300, y=250)
 
-        for i in citasMensuales.keys():
-            for k in citasMensuales[i]:
-                if doctor in k and k[0] == False and k[1]!=hora:
-                    for j in citasMensuales.keys():
-                        for l in citasMensuales[j]:
-                            if nombrePaciente in l:
-                                l[0]=False
-                                l[3]="Paciente"
-                                break
+        def procesoModificacion():
+            comprobarCambio =False
+            for i in citasMensuales.keys():
+                if str(i) in fechasCitas.get():
+                    for k in citasMensuales[i]:
+                        if nombrePaciente in k:
+                            doctor=k[2]
+                            hora=k[1]
+            for i in citasMensuales.keys():
+                for k in citasMensuales[i]:
+                    if doctor in k and k[0]==False and k[1]!=hora:
+                        comprobarCambio = True
+                        for l in citasMensuales.keys():
+                            for j in citasMensuales[l]:
+                                if doctor in k and k[0] == True and k[1]==hora and nombrePaciente in k:
+                                    k[0]=False
+                                    k[3]="Paciente"
+                        k[0]=True
+                        k[3]=nombrePaciente
+                        for k in listaFechaCita:
+                            k.destroy()
+                        for k in listaDoctorCita:
+                            k.destroy()
+                        for k in listaHorarioCita:
+                            k.destroy()
+                        #fecha=str(i)
+                        #fecha = fecha + " de " + mes
+                        #diaCita.config(text=fecha,font=("Times",12), justify=CENTER, bg="AliceBlue")##
+                        #nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER, bg="AliceBlue")##
+                        #horario2.config(text=k[1],font=("Times",12), justify=CENTER, bg="AliceBlue")##
                         break
-                    k[0]=True
-                    k[3]=nombrePaciente
-                    fecha=str(i)
-                    fecha = fecha + " de " + mes
-                    diaCita.config(text=fecha,font=("Times",12), justify=CENTER, bg="AliceBlue")##
-                    nombreDoctor.config(text=k[2],font=("Times",12), justify=CENTER, bg="AliceBlue")##
-                    horario2.config(text=k[1],font=("Times",12), justify=CENTER, bg="AliceBlue")##
-                    sinFechas.place_forget()
+
                     break
-                else:
-                    sinFechas.config(text="El doctor no tiene más fechas disponibles",font=("Times",12), bg="AliceBlue")
-            break
+            if comprobarCambio == True:
+                sinFechas.place_forget()
+                fechasCitas.place_forget()
+                botonModificarCita.place_forget()
+                mensajeFechas.place_forget()
+                MenuInicio.after(1000,consultarCita())
+            else:
+                messagebox.showwarning(message="El doctor no tiene más fechas disponibles")
+                sinFechas.place_forget()
+                fechasCitas.place_forget()
+                botonModificarCita.place_forget()
+                mensajeFechas.place_forget()
+                MenuInicio.after(1000,consultarCita())        
+                
+        botonModificarCita.config(command=procesoModificacion)
     citaModificar.config(command=modificarCita)        
     citaModificar['bg'] = 'gainsboro'
     citaModificar['fg'] = 'SlateBlue'
@@ -944,7 +991,8 @@ def consultarCita():
             k.place_forget()
         for k in listaHorarioCita:
             k.place_forget()
-
+        mensajeFechas=Label(MenuInicio, text="Por favor selecione una cita")
+        mensajeFechas.place(x=300, y = 150)
         fechasCitas=Combobox(MenuInicio, state="readonly")
         fechas=[]
         for k in listaFechaCita:
@@ -973,6 +1021,7 @@ def consultarCita():
                 k.destroy()
             fechasCitas.place_forget()
             botonEliminarCita.place_forget()
+            mensajeFechas.place_forget()
             MenuInicio.after(1000, consultarCita())
         botonEliminarCita.config(command=procesoEliminarCita)
     citaEliminar.config(command=eliminarCita)
